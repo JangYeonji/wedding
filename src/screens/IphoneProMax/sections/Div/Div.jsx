@@ -91,7 +91,7 @@ export const Div = () => {
         content: {
           title: "문석 ❤️ 연지 결혼합니다💍",
           description: "11월 08일 13시 오드힐하우스",
-          imageUrl: `${invitationUrl}img/kakao-preview.jpg`,
+          imageUrl: `${invitationUrl}img/1.webp`,
           link: {
             mobileWebUrl: invitationUrl,
             webUrl: invitationUrl,
