@@ -87,7 +87,7 @@ export const Frame = () => {
           <div className="clip-path-group">
             <div className="group-wrapper">
               <div className="group-2">
-                <img className="vector" alt="Vector" src="/img/vector-1.svg" />
+                <img className="vector" alt="Vector" src="/img/TMAP.svg" />
                 <img
                   className="vector-2"
                   alt="Vector"
@@ -111,7 +111,7 @@ export const Frame = () => {
           <div className="text-wrapper-8">카카오맵</div>
           <div className="element-wrapper">
             <div className="vector-wrapper">
-              <img className="vector-3" alt="Vector" src="/img/vector-4.svg" />
+              <img className="vector-3" alt="Vector" src="/img/KAKAO.svg" />
             </div>
           </div>
         </a>
