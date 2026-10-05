@@ -137,10 +137,7 @@ export const Frame = () => {
       <div className="div-6">
         <div className="div-7">
           <div className="div-8">
-            <img className="vector-4" alt="Vector" src="/img/vector-5.svg" />
-            <img className="vector-5" alt="Vector" src="/img/vector-7.svg" />
-            <img className="vector-6" alt="Vector" src="/img/vector-7.svg" />
-            <img className="vector-7" alt="Vector" src="/img/vector-8.svg" />
+            <img className="vector-4" alt="Vector" src="/img/arcticons_where-is-my-train.svg" />
           </div>
           <div className="div-9">
             <div className="text-wrapper-9">지하철 이용시</div>
@@ -152,7 +149,7 @@ export const Frame = () => {
         </div>
         <div className="div-10">
           <div className="div-8">
-            <img className="vector-8" alt="Vector" src="/img/vector-9.svg" />
+            <img className="vector-8" alt="Vector" src="/img/arcticons_bus.svg" />
           </div>
           <div className="div-9">
             <div className="text-wrapper-9">버스 이용시</div>
@@ -172,18 +169,11 @@ export const Frame = () => {
         <div className="frame-wrapper-2">
           <div className="div-10">
             <div className="div-8">
-              <div className="group-3">
-                <img
-                  className="vector-9"
-                  alt="Vector"
-                  src="/img/vector-10.svg"
-                />
-                <img
-                  className="vector-10"
-                  alt="Vector"
-                  src="/img/vector-11.svg"
-                />
-              </div>
+              <img
+                className="vector-9"
+                alt="주차"
+                src="/img/hugeicons_square-parking.svg"
+              />
             </div>
             <div className="div-9">
               <div className="text-wrapper-9">주차 안내</div>

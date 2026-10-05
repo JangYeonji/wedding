@@ -273,18 +273,25 @@
 }
 
 .frame .div-8 {
+  align-items: center;
   aspect-ratio: 1;
+  display: flex;
+  flex: 0 0 32px;
   height: 32px;
+  justify-content: center;
   position: relative;
   width: 32px;
 }
 
-.frame .vector-4 {
-  height: 74.65%;
-  left: 28.28%;
-  position: absolute;
-  top: 25.35%;
-  width: 71.72%;
+.frame .vector-4,
+.frame .vector-8,
+.frame .vector-9 {
+  display: block;
+  flex: 0 0 32px;
+  height: 32px;
+  object-fit: contain;
+  position: relative;
+  width: 32px;
 }
 
 .frame .vector-5 {
@@ -366,14 +373,6 @@
   width: 100%;
 }
 
-.frame .vector-8 {
-  height: 92.19%;
-  left: 15.10%;
-  position: absolute;
-  top: 7.81%;
-  width: 84.90%;
-}
-
 .frame .element-2 {
   color: #ffffff;
   font-family: "Gmarket Sans TTF-Light", Helvetica;
@@ -394,21 +393,7 @@
   position: relative;
 }
 
-.frame .group-3 {
-  height: 79.17%;
-  left: 10.38%;
-  position: relative;
-  top: 10.42%;
-  width: 79.17%;
-}
 
-.frame .vector-9 {
-  height: 101.97%;
-  left: 0;
-  position: absolute;
-  top: 0;
-  width: 101.97%;
-}
 
 .frame .vector-10 {
   height: 78.29%;
