@@ -80,7 +80,7 @@ export const FrameWrapper = () => {
                   <br />
                 </span>
                 <span className="text-wrapper-16">
-                  단위농협 423025-51-045881
+                  농협 423025-51-045881
                 </span>
               </p>
             </div>
@@ -93,7 +93,7 @@ export const FrameWrapper = () => {
               }
               labelTextPreferredModeLightStateClassName="button-liquid-glass-2"
               labelTextPreferredSymbolClassName="button-liquid-glass-3"
-              onClick={() => copyAccount(1, "단위농협 423025-51-045881")}
+              onClick={() => copyAccount(1, "농협 423025-51-045881")}
               tinted
             />
           </div>
@@ -105,7 +105,7 @@ export const FrameWrapper = () => {
                   홍정주
                   <br />
                 </span>
-                <span className="text-wrapper-16">농협중앙회 335-12-232834</span>
+                <span className="text-wrapper-16">농협 335-12-232834</span>
               </div>
             </div>
             <ButtonLiquidGlass
@@ -117,7 +117,7 @@ export const FrameWrapper = () => {
               }
               labelTextPreferredModeLightStateClassName="button-liquid-glass-2"
               labelTextPreferredSymbolClassName="button-liquid-glass-3"
-              onClick={() => copyAccount(2, "농협중앙회 335-12-232834")}
+              onClick={() => copyAccount(2, "농협 335-12-232834")}
               tinted
             />
           </div>
