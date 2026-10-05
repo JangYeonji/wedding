@@ -161,7 +161,7 @@ export const IphoneProMax = () => {
         <img className="image-2" alt="Image" src="/img/1-2.webp" />
         <img className="group-4" alt="Group" src="/img/group-166-2.webp" />
         <div className="group-5">
-          <div className="text-wrapper-21">갤러리</div>
+          <div className="text-wrapper-21">Gallery</div>
           <div
             className={`group-6${galleryPage > 0 ? " gallery-grid-layout" : ""}${galleryPage === 2 ? " gallery-third-layout" : ""}${galleryPage === 3 ? " gallery-fourth-layout" : ""}${galleryPage === 4 ? " gallery-fifth-layout" : ""}`}
             onTouchStart={handleGalleryTouchStart}
@@ -345,7 +345,13 @@ export const IphoneProMax = () => {
               aria-label="사진 닫기"
               onClick={() => setSelectedImageIndex(null)}
             >
-              ×
+              <svg
+                className="gallery-lightbox-close-icon"
+                viewBox="0 0 24 24"
+                aria-hidden="true"
+              >
+                <path d="m6 6 12 12M18 6 6 18" />
+              </svg>
             </button>
             <button
               className="gallery-lightbox-nav gallery-lightbox-previous"

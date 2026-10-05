@@ -360,6 +360,15 @@
   z-index: 1;
 }
 
+.gallery-lightbox-close-icon {
+  fill: none;
+  height: 16px;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-width: 2;
+  width: 16px;
+}
+
 .gallery-lightbox-nav {
   align-items: center;
   background: rgba(0, 0, 0, 0.5);
