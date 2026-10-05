@@ -80,6 +80,7 @@
   left: 0;
   position: absolute;
   top: 7.3%;
+  touch-action: pan-y;
   width: 99.55%;
 }
 
@@ -237,6 +238,84 @@
   top: 66.67%;
 }
 
+.iphone-pro-max .gallery-fourth-image {
+  height: 33.33%;
+  object-fit: cover;
+  position: absolute;
+  width: 33.33%;
+}
+
+.iphone-pro-max .gallery-fourth-image-1 {
+  left: 0;
+  top: 66.67%;
+}
+
+.iphone-pro-max .gallery-fourth-image-2 {
+  left: 66.67%;
+  top: 0;
+}
+
+.iphone-pro-max .gallery-fourth-image-3 {
+  left: 66.67%;
+  top: 33.33%;
+}
+
+.iphone-pro-max .gallery-fourth-image-4 {
+  height: 66.67%;
+  left: 0;
+  top: 0;
+  width: 66.67%;
+}
+
+.iphone-pro-max .gallery-fourth-image-5 {
+  left: 33.33%;
+  top: 66.67%;
+}
+
+.iphone-pro-max .gallery-fourth-image-6 {
+  left: 66.67%;
+  top: 66.67%;
+}
+
+.iphone-pro-max .gallery-fifth-image {
+  height: 33.33%;
+  object-fit: cover;
+  position: absolute;
+  width: 33.33%;
+}
+
+.iphone-pro-max .gallery-fifth-image-1 {
+  left: 0;
+  top: 66.67%;
+}
+
+.iphone-pro-max .gallery-fifth-image-2 {
+  left: 33.33%;
+  top: 66.67%;
+}
+
+.iphone-pro-max .gallery-fifth-image-3 {
+  height: 66.67%;
+  left: 0;
+  top: 0;
+  width: 66.67%;
+}
+
+.iphone-pro-max .gallery-fifth-image-4 {
+  left: 66.67%;
+  top: 33.33%;
+}
+
+.iphone-pro-max .gallery-fifth-image-5 {
+  left: 66.67%;
+  top: 0;
+}
+
+.iphone-pro-max .gallery-fifth-image-6 {
+  left: 66.67%;
+  top: 66.67%;
+}
+
 .iphone-pro-max .gallery-thumbnail {
   cursor: zoom-in;
 }
@@ -273,7 +352,7 @@
   height: 32px;
   justify-content: center;
   line-height: 1;
-  padding: 0 0 3px;
+  padding: 0;
   position: absolute;
   right: max(12px, env(safe-area-inset-right));
   top: max(12px, env(safe-area-inset-top));
@@ -297,6 +376,11 @@
   transform: translateY(-50%);
   width: 32px;
   z-index: 1;
+}
+
+.gallery-lightbox-nav:disabled {
+  cursor: default;
+  opacity: 0.4;
 }
 
 .gallery-lightbox-arrow {
@@ -329,47 +413,10 @@
   transform: translateX(-50%);
 }
 
-.iphone-pro-max .img-wrapper {
-  aspect-ratio: 1;
-  align-items: center;
-  background-color: #0e0007;
-  border: 0.5px solid;
-  border-color: #ff4ba6;
-  border-radius: 16px;
-  display: flex;
-  gap: 10px;
-  height: auto;
-  justify-content: center;
-  position: absolute;
-  top: 48.5%;
-  width: 5.45%;
-}
-
-.iphone-pro-max .img-wrapper {
-  cursor: pointer;
-  padding: 0;
-}
-
 .iphone-pro-max .gallery-layout-previous {
   left: 1.35%;
 }
 
-.iphone-pro-max .gallery-layout-previous .vector-15 {
-  transform: rotate(180deg);
-}
-
 .iphone-pro-max .gallery-layout-next {
-  left: 93.2%;
-}
-
-.iphone-pro-max .img-wrapper:disabled {
-  cursor: default;
-  opacity: 0.4;
-}
-
-.iphone-pro-max .vector-15 {
-  aspect-ratio: 1.75;
-  height: 42%;
-  position: relative;
-  width: 21%;
+  right: 1.35%;
 }

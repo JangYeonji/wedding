@@ -46,11 +46,16 @@ const galleryImages = [
   { src: "/img/Gallery5-7(Extra).webp", alt: "웨딩 갤러리 사진 36" },
 ];
 
+const secondGalleryPageImageIndices = [6, 9, 10, 7, 8, 12, 13, 11];
+const fourthGalleryPageImageIndices = [23, 24, 25, 26, 27, 28];
+const fifthGalleryPageImageIndices = [32, 33, 30, 29, 31, 34];
+
 export const IphoneProMax = () => {
   const [selectedImageIndex, setSelectedImageIndex] = useState(null);
   const [galleryPage, setGalleryPage] = useState(0);
   const closeButtonRef = useRef(null);
   const touchStartXRef = useRef(null);
+  const galleryTouchStartXRef = useRef(null);
   const isLightboxOpen = selectedImageIndex !== null;
 
   useEffect(() => {
@@ -66,9 +71,9 @@ export const IphoneProMax = () => {
       if (event.key === "Escape") {
         setSelectedImageIndex(null);
       } else if (event.key === "ArrowLeft") {
-        setSelectedImageIndex((index) => (index - 1 + galleryImages.length) % galleryImages.length);
+        setSelectedImageIndex((index) => Math.max(0, index - 1));
       } else if (event.key === "ArrowRight") {
-        setSelectedImageIndex((index) => (index + 1) % galleryImages.length);
+        setSelectedImageIndex((index) => Math.min(galleryImages.length - 1, index + 1));
       }
     };
 
@@ -81,11 +86,40 @@ export const IphoneProMax = () => {
   }, [isLightboxOpen]);
 
   const showPreviousImage = () => {
-    setSelectedImageIndex((index) => (index - 1 + galleryImages.length) % galleryImages.length);
+    setSelectedImageIndex((index) => Math.max(0, index - 1));
   };
 
   const showNextImage = () => {
-    setSelectedImageIndex((index) => (index + 1) % galleryImages.length);
+    setSelectedImageIndex((index) => Math.min(galleryImages.length - 1, index + 1));
+  };
+
+  const showPreviousGalleryPage = () => {
+    setGalleryPage((page) => Math.max(0, page - 1));
+  };
+
+  const showNextGalleryPage = () => {
+    setGalleryPage((page) => Math.min(4, page + 1));
+  };
+
+  const handleGalleryTouchStart = (event) => {
+    galleryTouchStartXRef.current = event.changedTouches[0].clientX;
+  };
+
+  const handleGalleryTouchEnd = (event) => {
+    if (galleryTouchStartXRef.current === null) {
+      return;
+    }
+
+    const swipeDistance = event.changedTouches[0].clientX - galleryTouchStartXRef.current;
+    galleryTouchStartXRef.current = null;
+
+    if (Math.abs(swipeDistance) > 50) {
+      if (swipeDistance > 0) {
+        showPreviousGalleryPage();
+      } else {
+        showNextGalleryPage();
+      }
+    }
   };
 
   const handleTouchStart = (event) => {
@@ -127,10 +161,14 @@ export const IphoneProMax = () => {
         <img className="group-4" alt="Group" src="/img/group-166-2.png" />
         <div className="group-5">
           <div className="text-wrapper-21">갤러리</div>
-          <div className={`group-6${galleryPage > 0 ? " gallery-grid-layout" : ""}${galleryPage === 2 ? " gallery-third-layout" : ""}`}>
+          <div
+            className={`group-6${galleryPage > 0 ? " gallery-grid-layout" : ""}${galleryPage === 2 ? " gallery-third-layout" : ""}${galleryPage === 3 ? " gallery-fourth-layout" : ""}${galleryPage === 4 ? " gallery-fifth-layout" : ""}`}
+            onTouchStart={handleGalleryTouchStart}
+            onTouchEnd={handleGalleryTouchEnd}
+          >
             {galleryPage === 1 ? (
-              galleryImages.slice(6, 14).map((image, index) => {
-                const imageIndex = index + 6;
+              secondGalleryPageImageIndices.map((imageIndex, index) => {
+                const image = galleryImages[imageIndex];
 
                 return (
                   <img
@@ -162,19 +200,44 @@ export const IphoneProMax = () => {
                   />
                 );
               })
+            ) : galleryPage === 3 ? (
+              fourthGalleryPageImageIndices.map((imageIndex, index) => {
+                const image = galleryImages[imageIndex];
+
+                return (
+                  <img
+                    key={image.src}
+                    className={`gallery-fourth-image gallery-fourth-image-${index + 1} gallery-thumbnail`}
+                    {...image}
+                    role="button"
+                    tabIndex={0}
+                    aria-haspopup="dialog"
+                    onClick={() => setSelectedImageIndex(imageIndex)}
+                    onKeyDown={(event) => handleImageKeyDown(event, imageIndex)}
+                  />
+                );
+              })
+            ) : galleryPage === 4 ? (
+              fifthGalleryPageImageIndices.map((imageIndex, index) => {
+                const image = galleryImages[imageIndex];
+
+                return (
+                  <img
+                    key={image.src}
+                    className={`gallery-fifth-image gallery-fifth-image-${index + 1} gallery-thumbnail`}
+                    {...image}
+                    role="button"
+                    tabIndex={0}
+                    aria-haspopup="dialog"
+                    onClick={() => setSelectedImageIndex(imageIndex)}
+                    onKeyDown={(event) => handleImageKeyDown(event, imageIndex)}
+                  />
+                );
+              })
             ) : (
               <>
             <img
                 className="l-2 gallery-thumbnail"
-                {...galleryImages[0]}
-                role="button"
-                tabIndex={0}
-                aria-haspopup="dialog"
-                onClick={() => setSelectedImageIndex(0)}
-                onKeyDown={(event) => handleImageKeyDown(event, 0)}
-              />
-              <img
-                className="l-3 gallery-thumbnail"
                 {...galleryImages[1]}
                 role="button"
                 tabIndex={0}
@@ -182,16 +245,16 @@ export const IphoneProMax = () => {
                 onClick={() => setSelectedImageIndex(1)}
                 onKeyDown={(event) => handleImageKeyDown(event, 1)}
               />
+              <img
+                className="l-3 gallery-thumbnail"
+                {...galleryImages[2]}
+                role="button"
+                tabIndex={0}
+                aria-haspopup="dialog"
+                onClick={() => setSelectedImageIndex(2)}
+                onKeyDown={(event) => handleImageKeyDown(event, 2)}
+              />
               <div className="frame-18">
-                <img
-                  className="l-4 gallery-thumbnail"
-                  {...galleryImages[2]}
-                  role="button"
-                  tabIndex={0}
-                  aria-haspopup="dialog"
-                  onClick={() => setSelectedImageIndex(2)}
-                  onKeyDown={(event) => handleImageKeyDown(event, 2)}
-                />
                 <img
                   className="l-4 gallery-thumbnail"
                   {...galleryImages[3]}
@@ -202,7 +265,7 @@ export const IphoneProMax = () => {
                   onKeyDown={(event) => handleImageKeyDown(event, 3)}
                 />
                 <img
-                  className="l-5 gallery-thumbnail"
+                  className="l-4 gallery-thumbnail"
                   {...galleryImages[4]}
                   role="button"
                   tabIndex={0}
@@ -210,35 +273,48 @@ export const IphoneProMax = () => {
                   onClick={() => setSelectedImageIndex(4)}
                   onKeyDown={(event) => handleImageKeyDown(event, 4)}
                 />
+                <img
+                  className="l-5 gallery-thumbnail"
+                  {...galleryImages[5]}
+                  role="button"
+                  tabIndex={0}
+                  aria-haspopup="dialog"
+                  onClick={() => setSelectedImageIndex(5)}
+                  onKeyDown={(event) => handleImageKeyDown(event, 5)}
+                />
               </div>
               <img
                 className="l-6 gallery-thumbnail"
-                {...galleryImages[5]}
+                {...galleryImages[0]}
                 role="button"
                 tabIndex={0}
                 aria-haspopup="dialog"
-                onClick={() => setSelectedImageIndex(5)}
-                onKeyDown={(event) => handleImageKeyDown(event, 5)}
+                onClick={() => setSelectedImageIndex(0)}
+                onKeyDown={(event) => handleImageKeyDown(event, 0)}
               />
               </>
             )}
             <button
-              className="img-wrapper gallery-layout-previous"
+              className="gallery-lightbox-nav gallery-lightbox-previous gallery-layout-previous"
               type="button"
               aria-label="이전 갤러리 보기"
               disabled={galleryPage === 0}
-              onClick={() => setGalleryPage((page) => Math.max(0, page - 1))}
+              onClick={showPreviousGalleryPage}
             >
-              <img className="vector-15" alt="" src="/img/vector.svg" />
+              <svg className="gallery-lightbox-arrow" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="m15 18-6-6 6-6" />
+              </svg>
             </button>
             <button
-              className="img-wrapper gallery-layout-next"
+              className="gallery-lightbox-nav gallery-lightbox-next gallery-layout-next"
               type="button"
               aria-label="다음 갤러리 보기"
-              disabled={galleryPage === 2}
-              onClick={() => setGalleryPage((page) => Math.min(2, page + 1))}
+              disabled={galleryPage === 4}
+              onClick={showNextGalleryPage}
             >
-              <img className="vector-15" alt="" src="/img/vector.svg" />
+              <svg className="gallery-lightbox-arrow" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="m9 18 6-6-6-6" />
+              </svg>
             </button>
           </div>
         </div>
@@ -274,6 +350,7 @@ export const IphoneProMax = () => {
               className="gallery-lightbox-nav gallery-lightbox-previous"
               type="button"
               aria-label="이전 사진"
+              disabled={selectedImageIndex === 0}
               onClick={showPreviousImage}
             >
               <svg
@@ -293,6 +370,7 @@ export const IphoneProMax = () => {
               className="gallery-lightbox-nav gallery-lightbox-next"
               type="button"
               aria-label="다음 사진"
+              disabled={selectedImageIndex === galleryImages.length - 1}
               onClick={showNextImage}
             >
               <svg
