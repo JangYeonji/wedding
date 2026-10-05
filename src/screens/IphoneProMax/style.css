@@ -139,6 +139,98 @@
   width: 66.67%;
 }
 
+.iphone-pro-max .gallery-thumbnail {
+  cursor: zoom-in;
+}
+
+.gallery-lightbox {
+  align-items: center;
+  background: rgba(0, 0, 0, 0.96);
+  display: flex;
+  inset: 0;
+  justify-content: center;
+  position: fixed;
+  z-index: 10000;
+  touch-action: pan-y;
+}
+
+.gallery-lightbox-image {
+  height: 100%;
+  max-height: 100dvh;
+  max-width: 100vw;
+  object-fit: contain;
+  width: 100%;
+}
+
+.gallery-lightbox-close {
+  align-items: center;
+  background: rgba(0, 0, 0, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.65);
+  border-radius: 50%;
+  color: #fff;
+  cursor: pointer;
+  display: flex;
+  font: inherit;
+  font-size: 24px;
+  height: 32px;
+  justify-content: center;
+  line-height: 1;
+  padding: 0 0 3px;
+  position: absolute;
+  right: max(12px, env(safe-area-inset-right));
+  top: max(12px, env(safe-area-inset-top));
+  width: 32px;
+  z-index: 1;
+}
+
+.gallery-lightbox-nav {
+  align-items: center;
+  background: rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.55);
+  border-radius: 50%;
+  color: #fff;
+  cursor: pointer;
+  display: flex;
+  height: 32px;
+  justify-content: center;
+  padding: 0;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 32px;
+  z-index: 1;
+}
+
+.gallery-lightbox-arrow {
+  fill: none;
+  height: 16px;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 2;
+  width: 16px;
+}
+
+.gallery-lightbox-previous {
+  left: max(16px, env(safe-area-inset-left));
+}
+
+.gallery-lightbox-next {
+  right: max(16px, env(safe-area-inset-right));
+}
+
+.gallery-lightbox-count {
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 14px;
+  bottom: max(20px, env(safe-area-inset-bottom));
+  color: #fff;
+  font-size: 14px;
+  left: 50%;
+  padding: 6px 12px;
+  position: absolute;
+  transform: translateX(-50%);
+}
+
 .iphone-pro-max .img-wrapper {
   align-items: center;
   aspect-ratio: 1;
