@@ -141,10 +141,11 @@
   align-items: center;
   display: flex;
   flex: 0 0 auto;
-  gap: 8px;
+  gap: 16px;
   justify-content: center;
+  max-width: 400px;
   position: relative;
-  width: 100%;
+  width: calc(100% - 24px);
 }
 
 .frame .div-5 {
@@ -257,6 +258,7 @@
   flex: 0 0 auto;
   flex-direction: column;
   gap: 20px;
+  max-width: 410px;
   padding: 20px 15px;
   position: relative;
   width: 100%;
