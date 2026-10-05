@@ -1,6 +1,19 @@
+import { useState } from "react";
 import "./style.css";
 
 export const Div = () => {
+  const [copyStatus, setCopyStatus] = useState("");
+
+  const copyInvitationUrl = async () => {
+    try {
+      await navigator.clipboard.writeText("https://wedding-xi-silk.vercel.app/");
+      setCopyStatus("복사 완료!");
+    } catch (error) {
+      console.error("청첩장 주소 복사에 실패했습니다.", error);
+      setCopyStatus("복사 실패");
+    }
+  };
+
   return (
     <div className="div">
       <img className="l" alt="L" src="/img/l1150368-1.png" />
@@ -18,13 +31,19 @@ export const Div = () => {
             <img className="vector-12" alt="Vector" src="/img/vector-14.svg" />
           </div>
         </div>
-        <div className="frame-16">
-          <div className="text-wrapper-20">청첩장 주소 복사하기</div>
+        <button
+          className="frame-16"
+          type="button"
+          onClick={copyInvitationUrl}
+        >
+          <div className="text-wrapper-20">
+            {copyStatus || "청첩장 주소 복사하기"}
+          </div>
           <div className="boxicons-copy">
             <img className="vector-13" alt="Vector" src="/img/vector-15.svg" />
             <img className="vector-14" alt="Vector" src="/img/vector-16.svg" />
           </div>
-        </div>
+        </button>
       </div>
     </div>
   );
