@@ -1,7 +1,20 @@
+import { useState } from "react";
 import { ButtonLiquidGlass } from "../../../../components/ButtonLiquidGlass";
 import "./style.css";
 
 export const FrameWrapper = () => {
+  const [copyStatus, setCopyStatus] = useState(null);
+
+  const copyAccount = async (accountIndex, accountDetails) => {
+    try {
+      await navigator.clipboard.writeText(accountDetails);
+      setCopyStatus({ accountIndex, message: "복사 완료" });
+    } catch (error) {
+      console.error("계좌 정보 복사에 실패했습니다.", error);
+      setCopyStatus({ accountIndex, message: "복사 실패" });
+    }
+  };
+
   return (
     <div className="frame-wrapper">
       <div className="text-wrapper-12">마음 전하실 곳</div>
@@ -29,9 +42,14 @@ export const FrameWrapper = () => {
             </div>
             <ButtonLiquidGlass
               className="design-component-instance-node"
-              labelTextPreferredLabel="복사하기"
+              labelTextPreferredLabel={
+                copyStatus?.accountIndex === 0
+                  ? copyStatus.message
+                  : "복사하기"
+              }
               labelTextPreferredModeLightStateClassName="button-liquid-glass-2"
               labelTextPreferredSymbolClassName="button-liquid-glass-3"
+              onClick={() => copyAccount(0, "우리은행 1002-364-341611")}
               tinted
             />
           </div>
@@ -50,9 +68,14 @@ export const FrameWrapper = () => {
             </div>
             <ButtonLiquidGlass
               className="design-component-instance-node"
-              labelTextPreferredLabel="복사하기"
+              labelTextPreferredLabel={
+                copyStatus?.accountIndex === 1
+                  ? copyStatus.message
+                  : "복사하기"
+              }
               labelTextPreferredModeLightStateClassName="button-liquid-glass-2"
               labelTextPreferredSymbolClassName="button-liquid-glass-3"
+              onClick={() => copyAccount(1, "단위농협 423025-51-045881")}
               tinted
             />
           </div>
@@ -67,9 +90,14 @@ export const FrameWrapper = () => {
             </div>
             <ButtonLiquidGlass
               className="design-component-instance-node"
-              labelTextPreferredLabel="복사하기"
+              labelTextPreferredLabel={
+                copyStatus?.accountIndex === 2
+                  ? copyStatus.message
+                  : "복사하기"
+              }
               labelTextPreferredModeLightStateClassName="button-liquid-glass-2"
               labelTextPreferredSymbolClassName="button-liquid-glass-3"
+              onClick={() => copyAccount(2, "농협중앙회 335-12-232834")}
               tinted
             />
           </div>
@@ -95,9 +123,14 @@ export const FrameWrapper = () => {
             </div>
             <ButtonLiquidGlass
               className="design-component-instance-node"
-              labelTextPreferredLabel="복사하기"
+              labelTextPreferredLabel={
+                copyStatus?.accountIndex === 3
+                  ? copyStatus.message
+                  : "복사하기"
+              }
               labelTextPreferredModeLightStateClassName="button-liquid-glass-2"
               labelTextPreferredSymbolClassName="button-liquid-glass-3"
+              onClick={() => copyAccount(3, "우리은행 1002-954-609671")}
               tinted
             />
           </div>
@@ -112,9 +145,14 @@ export const FrameWrapper = () => {
             </div>
             <ButtonLiquidGlass
               className="design-component-instance-node"
-              labelTextPreferredLabel="복사하기"
+              labelTextPreferredLabel={
+                copyStatus?.accountIndex === 4
+                  ? copyStatus.message
+                  : "복사하기"
+              }
               labelTextPreferredModeLightStateClassName="button-liquid-glass-2"
               labelTextPreferredSymbolClassName="button-liquid-glass-3"
+              onClick={() => copyAccount(4, "카카오뱅크 3333-04-1121431")}
               tinted
             />
           </div>
@@ -129,9 +167,14 @@ export const FrameWrapper = () => {
             </div>
             <ButtonLiquidGlass
               className="design-component-instance-node"
-              labelTextPreferredLabel="복사하기"
+              labelTextPreferredLabel={
+                copyStatus?.accountIndex === 5
+                  ? copyStatus.message
+                  : "복사하기"
+              }
               labelTextPreferredModeLightStateClassName="button-liquid-glass-2"
               labelTextPreferredSymbolClassName="button-liquid-glass-3"
+              onClick={() => copyAccount(5, "신한은행 110-139-768862")}
               tinted
             />
           </div>
