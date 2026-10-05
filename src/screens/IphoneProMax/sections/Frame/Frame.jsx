@@ -1,7 +1,9 @@
+import { useState } from "react";
 import { ButtonLiquidGlass } from "../../../../components/ButtonLiquidGlass";
 import "./style.css";
 
 const venueName = "오드힐하우스";
+const venueAddress = "서울 서초구 방배로 47 오드힐하우스";
 const naverMapUrl = `https://map.naver.com/p/search/${encodeURIComponent(venueName)}`;
 
 const openMapApp = (event, appUrl) => {
@@ -25,18 +27,36 @@ const openMapApp = (event, appUrl) => {
 };
 
 export const Frame = () => {
+  const [copyStatus, setCopyStatus] = useState("");
   const appName = window.location.hostname || "wedding-invitation";
+
+  const copyVenueAddress = async () => {
+    try {
+      await navigator.clipboard.writeText(venueAddress);
+      setCopyStatus("복사 완료!");
+    } catch (error) {
+      console.error("주소 복사에 실패했습니다.", error);
+      setCopyStatus("복사 실패");
+    }
+  };
 
   return (
     <div className="frame">
       <div className="text-wrapper-5">오시는 길</div>
-      <iframe
-        className="naver-map"
-        title={`${venueName} 네이버 지도`}
-        src={naverMapUrl}
-        allowFullScreen
-        loading="lazy"
-      />
+      <a
+        className="naver-map-link"
+        href={naverMapUrl}
+        target="_blank"
+        rel="noreferrer"
+        aria-label={`${venueName} 네이버 지도에서 보기`}
+      >
+        <img
+          className="naver-map"
+          alt={`${venueName} 위치 지도`}
+          src="/img/naver-map-1.png"
+        />
+        <span className="naver-map-open-label">네이버 지도에서 크게 보기</span>
+      </a>
       <div className="div-2">
         <div className="div-3">
           <div className="text-wrapper-6">오드힐하우스</div>
@@ -44,9 +64,10 @@ export const Frame = () => {
         </div>
         <ButtonLiquidGlass
           className="button-liquid-glass-text"
-          labelTextPreferredLabel="주소 복사하기"
+          labelTextPreferredLabel={copyStatus || "주소 복사하기"}
           labelTextPreferredModeLightStateClassName="button-liquid-glass-instance"
           labelTextPreferredSymbolClassName="button-liquid-glass-text-instance"
+          onClick={copyVenueAddress}
           tinted
         />
       </div>

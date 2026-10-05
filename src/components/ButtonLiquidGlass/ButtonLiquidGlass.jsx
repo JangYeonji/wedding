@@ -8,9 +8,17 @@ export const ButtonLiquidGlass = ({
   labelTextPreferredLabel = "Label",
   labelTextPreferredModeLightStateClassName,
   labelTextPreferredSymbolClassName,
+  onClick,
 }) => {
+  const Wrapper = onClick ? "button" : "div";
+
   return (
-    <div className={`button-liquid-glass ${className}`}>
+    <Wrapper
+      className={`button-liquid-glass ${className}`}
+      onClick={onClick}
+      type={onClick ? "button" : undefined}
+      aria-live={onClick ? "polite" : undefined}
+    >
       <LiquidGlassRegular
         className="BG"
         glassEffectClassName="liquid-glass-regular-small"
@@ -24,6 +32,6 @@ export const ButtonLiquidGlass = ({
         state="default"
         symbolClassName={labelTextPreferredSymbolClassName}
       />
-    </div>
+    </Wrapper>
   );
 };

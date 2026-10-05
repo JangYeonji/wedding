@@ -10,6 +10,19 @@
   top: 110px;
 }
 
+.button-liquid-glass:where(button) {
+  background: transparent;
+  border: 0;
+  color: inherit;
+  cursor: pointer;
+  font: inherit;
+}
+
+.button-liquid-glass:where(button):focus-visible {
+  outline: 2px solid #d71979;
+  outline-offset: 3px;
+}
+
 .button-liquid-glass .BG {
   display: unset !important;
   height: 100% !important;
