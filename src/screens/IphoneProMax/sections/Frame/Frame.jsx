@@ -1,40 +1,10 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import { ButtonLiquidGlass } from "../../../../components/ButtonLiquidGlass";
 import "./style.css";
 
 const venueName = "오드힐하우스";
 const venueAddress = "서울 서초구 방배로 47";
-const kakaoMapUrl = `https://map.kakao.com/link/search/${encodeURIComponent(venueName)}`;
 const naverMapUrl = `https://map.naver.com/p/search/${encodeURIComponent(venueName)}`;
-const kakaoJavaScriptKey = import.meta.env.VITE_KAKAO_JS_KEY;
-let kakaoMapsSdkPromise;
-
-const loadKakaoMapsSdk = () => {
-  if (window.kakao?.maps) {
-    return Promise.resolve(window.kakao);
-  }
-
-  if (!kakaoMapsSdkPromise) {
-    kakaoMapsSdkPromise = new Promise((resolve, reject) => {
-      const script = document.createElement("script");
-      script.src = `https://dapi.kakao.com/v2/maps/sdk.js?appkey=${encodeURIComponent(kakaoJavaScriptKey)}&autoload=false&libraries=services`;
-      script.onload = () => {
-        if (window.kakao?.maps) {
-          resolve(window.kakao);
-        } else {
-          reject(new Error("카카오 지도 SDK를 불러오지 못했습니다."));
-        }
-      };
-      script.onerror = () => reject(new Error("카카오 지도 SDK를 불러오지 못했습니다."));
-      document.head.appendChild(script);
-    }).catch((error) => {
-      kakaoMapsSdkPromise = undefined;
-      throw error;
-    });
-  }
-
-  return kakaoMapsSdkPromise;
-};
 
 const openMapApp = (event, appUrl) => {
   event.preventDefault();
@@ -58,62 +28,7 @@ const openMapApp = (event, appUrl) => {
 
 export const Frame = () => {
   const [copyStatus, setCopyStatus] = useState("");
-  const [mapError, setMapError] = useState("");
-  const mapElementRef = useRef(null);
   const appName = window.location.hostname || "wedding-invitation";
-
-  useEffect(() => {
-    let isMounted = true;
-
-    if (!kakaoJavaScriptKey) {
-      console.error("VITE_KAKAO_JS_KEY 환경 변수가 설정되지 않았습니다.");
-      setMapError("카카오 지도 키가 없습니다. 배포 환경의 VITE_KAKAO_JS_KEY 설정을 확인해 주세요.");
-      return () => {
-        isMounted = false;
-      };
-    }
-
-    loadKakaoMapsSdk()
-      .then((Kakao) => {
-        Kakao.maps.load(() => {
-          if (!isMounted || !mapElementRef.current) {
-            return;
-          }
-
-          const map = new Kakao.maps.Map(mapElementRef.current, {
-            center: new Kakao.maps.LatLng(37.4815, 126.9848),
-            level: 3,
-          });
-          const geocoder = new Kakao.maps.services.Geocoder();
-
-          geocoder.addressSearch(venueAddress, (results, status) => {
-            if (status !== Kakao.maps.services.Status.OK || results.length === 0) {
-              console.error("카카오 지도에서 예식장 주소를 찾지 못했습니다.");
-              if (isMounted) {
-                setMapError("장소를 찾지 못했습니다. 카카오맵에서 확인해 주세요.");
-              }
-              return;
-            }
-
-            const position = new Kakao.maps.LatLng(results[0].y, results[0].x);
-            map.setCenter(position);
-            new Kakao.maps.Marker({ map, position });
-          });
-        });
-      })
-      .catch((error) => {
-        console.error("카카오 지도를 불러오지 못했습니다.", error);
-        if (isMounted) {
-          setMapError(
-            "지도를 불러오지 못했습니다. 카카오 JavaScript 키와 허용 도메인 설정을 확인해 주세요.",
-          );
-        }
-      });
-
-    return () => {
-      isMounted = false;
-    };
-  }, []);
 
   useEffect(() => {
     if (!copyStatus) {
@@ -138,26 +53,11 @@ export const Frame = () => {
     <div className="frame">
       <div className="text-wrapper-5">오시는 길</div>
       <div className="kakao-map-container">
-        <div
+        <img
           className="kakao-map"
-          ref={mapElementRef}
-          role="region"
-          aria-label={`${venueName} 위치 카카오 지도`}
+          src="/img/map.png"
+          alt={`${venueName} 위치 약도`}
         />
-        {mapError && (
-          <div className="kakao-map-error" role="status">
-            {mapError}
-          </div>
-        )}
-        <a
-          className="kakao-map-open-label"
-          href={kakaoMapUrl}
-          target="_blank"
-          rel="noreferrer"
-          aria-label={`${venueName} 카카오맵에서 크게 보기`}
-        >
-          카카오맵에서 크게 보기
-        </a>
       </div>
       <div className="div-2">
         <div className="div-3">
