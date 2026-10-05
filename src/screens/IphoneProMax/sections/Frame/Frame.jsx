@@ -3,7 +3,7 @@ import { ButtonLiquidGlass } from "../../../../components/ButtonLiquidGlass";
 import "./style.css";
 
 const venueName = "오드힐하우스";
-const venueAddress = "서울 서초구 방배로 47 오드힐하우스";
+const venueAddress = "서울 서초구 방배로 47";
 const naverMapUrl = `https://map.naver.com/p/search/${encodeURIComponent(venueName)}`;
 
 const openMapApp = (event, appUrl) => {
