@@ -154,12 +154,12 @@ export const IphoneProMax = () => {
   return (
     <div className="iphone-pro-max" data-model-id="202:381">
       <div className="frame-17">
-        <img className="element-7" alt="Element" src="/img/1.png" />
+        <img className="element-7" alt="Element" src="/img/1.webp" />
         <DivWrapper />
         <Group />
-        <img className="image" alt="Image" src="/img/image.png" />
-        <img className="image-2" alt="Image" src="/img/1-2.png" />
-        <img className="group-4" alt="Group" src="/img/group-166-2.png" />
+        <img className="image" alt="Image" src="/img/image.webp" />
+        <img className="image-2" alt="Image" src="/img/1-2.webp" />
+        <img className="group-4" alt="Group" src="/img/group-166-2.webp" />
         <div className="group-5">
           <div className="text-wrapper-21">갤러리</div>
           <div

@@ -133,7 +133,7 @@ export const Div = () => {
 
   return (
     <div className="div">
-      <img className="l" alt="L" src="/img/l1150368-1.png" />
+      <img className="l" alt="L" src="/img/l1150368-1.webp" />
       <p className="text-wrapper-18">
         한정된 공간에서 작은 결혼식을 준비하게 되었습니다.
         <br />

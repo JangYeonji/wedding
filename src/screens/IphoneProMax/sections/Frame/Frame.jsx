@@ -55,7 +55,7 @@ export const Frame = () => {
       <div className="kakao-map-container">
         <img
           className="kakao-map"
-          src="/img/map.png"
+          src="/img/map.webp"
           alt={`${venueName} 위치 약도`}
         />
       </div>
@@ -132,7 +132,7 @@ export const Frame = () => {
           <img
             className="service-icon"
             alt="Service icon"
-            src="/img/service-icon-1.png"
+            src="/img/service-icon-1.webp"
           />
         </a>
       </div>
