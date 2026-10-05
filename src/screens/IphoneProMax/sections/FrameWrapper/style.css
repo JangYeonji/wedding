@@ -41,6 +41,14 @@
   width: 100%;
 }
 
+.frame-wrapper .frame-8.is-collapsed {
+  gap: 0;
+}
+
+.frame-wrapper .frame-8.is-collapsed > :not(.frame-9) {
+  display: none;
+}
+
 .frame-wrapper .frame-9 {
   align-items: flex-start;
   align-self: stretch;
@@ -70,9 +78,19 @@
 
 .frame-wrapper .dashicons-arrow-down {
   aspect-ratio: 1;
+  background: transparent;
+  border: 0;
+  cursor: pointer;
   height: 20px;
+  padding: 0;
   position: relative;
   width: 20px;
+}
+
+.frame-wrapper .dashicons-arrow-down:focus-visible {
+  border-radius: 4px;
+  outline: 2px solid #ff4ba6;
+  outline-offset: 2px;
 }
 
 .frame-wrapper .vector-11 {
@@ -80,7 +98,13 @@
   left: 15.00%;
   position: absolute;
   top: 30.00%;
+  transform: rotate(180deg);
+  transition: transform 160ms ease;
   width: 85.00%;
+}
+
+.frame-wrapper .dashicons-arrow-down.is-expanded .vector-11 {
+  transform: rotate(0deg);
 }
 
 .frame-wrapper .rectangle {

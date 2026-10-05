@@ -4,6 +4,8 @@ import "./style.css";
 
 export const FrameWrapper = () => {
   const [copyStatus, setCopyStatus] = useState(null);
+  const [groomSideExpanded, setGroomSideExpanded] = useState(true);
+  const [brideSideExpanded, setBrideSideExpanded] = useState(true);
 
   const copyAccount = async (accountIndex, accountDetails) => {
     try {
@@ -18,15 +20,22 @@ export const FrameWrapper = () => {
   return (
     <div className="frame-wrapper">
       <div className="text-wrapper-12">마음 전하실 곳</div>
-      <div className="frame-8">
+      <div className={`frame-8${groomSideExpanded ? "" : " is-collapsed"}`}>
         <div className="frame-9">
           <div className="text-wrapper-13">신랑측</div>
-          <div className="dashicons-arrow-down">
-            <img className="vector-11" alt="Vector" src="/img/vector-13.svg" />
-          </div>
+          <button
+            className={`dashicons-arrow-down${groomSideExpanded ? " is-expanded" : ""}`}
+            type="button"
+            aria-label={`신랑측 계좌 ${groomSideExpanded ? "접기" : "펼치기"}`}
+            aria-expanded={groomSideExpanded}
+            aria-controls="groom-account-list"
+            onClick={() => setGroomSideExpanded((expanded) => !expanded)}
+          >
+            <img className="vector-11" alt="" src="/img/vector-13.svg" />
+          </button>
         </div>
         <div className="rectangle" />
-        <div className="frame-10">
+        <div className="frame-10" id="groom-account-list">
           <div className="frame-11">
             <div className="frame-12">
               <div className="text-wrapper-14">신랑</div>
@@ -103,15 +112,22 @@ export const FrameWrapper = () => {
           </div>
         </div>
       </div>
-      <div className="frame-8">
+      <div className={`frame-8${brideSideExpanded ? "" : " is-collapsed"}`}>
         <div className="frame-9">
           <div className="text-wrapper-13">신부측</div>
-          <div className="dashicons-arrow-down">
-            <img className="vector-11" alt="Vector" src="/img/vector-13.svg" />
-          </div>
+          <button
+            className={`dashicons-arrow-down${brideSideExpanded ? " is-expanded" : ""}`}
+            type="button"
+            aria-label={`신부측 계좌 ${brideSideExpanded ? "접기" : "펼치기"}`}
+            aria-expanded={brideSideExpanded}
+            aria-controls="bride-account-list"
+            onClick={() => setBrideSideExpanded((expanded) => !expanded)}
+          >
+            <img className="vector-11" alt="" src="/img/vector-13.svg" />
+          </button>
         </div>
         <div className="rectangle" />
-        <div className="frame-10">
+        <div className="frame-10" id="bride-account-list">
           <div className="frame-11">
             <div className="frame-12">
               <div className="text-wrapper-17">신부</div>
