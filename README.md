@@ -30,6 +30,13 @@ If you are satisfied with the result, you can finally build the project for rele
 npm run build
 ```
 
+## Kakao Maps
+
+The directions section uses the Kakao Maps JavaScript API. Set `VITE_KAKAO_JS_KEY`
+to a Kakao Developers JavaScript key with the Maps API enabled, and register the
+site's domain (including the local development domain) in the app's platform
+settings. This key is also used by the Kakao sharing feature.
+
 ## Storybook
 
 After installing, you can view your storybook by running:
