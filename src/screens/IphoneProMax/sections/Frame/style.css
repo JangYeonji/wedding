@@ -80,7 +80,7 @@
   line-height: normal;
   position: relative;
   text-align: center;
-  white-space: nowrap;
+  white-space: normal;
   width: fit-content;
 }
 
@@ -111,10 +111,10 @@
   align-items: center;
   display: flex;
   flex: 0 0 auto;
-  gap: 16px;
+  gap: 8px;
   justify-content: center;
   position: relative;
-  width: 416px;
+  width: 100%;
 }
 
 .frame .div-5 {
@@ -222,7 +222,7 @@
   gap: 20px;
   padding: 20px 15px;
   position: relative;
-  width: 410px;
+  width: 100%;
 }
 
 .frame .div-7 {
@@ -280,6 +280,7 @@
   flex: 0 0 auto;
   flex-direction: column;
   gap: 4px;
+  min-width: 0;
   position: relative;
 }
 
@@ -305,8 +306,7 @@
   letter-spacing: 0;
   line-height: normal;
   position: relative;
-  white-space: nowrap;
-  width: fit-content;
+  max-width: 100%;
 }
 
 .frame .text-wrapper-10 {
@@ -326,6 +326,7 @@
   flex: 0 0 auto;
   gap: 14px;
   position: relative;
+  width: 100%;
 }
 
 .frame .vector-8 {
@@ -344,7 +345,7 @@
   letter-spacing: 0;
   line-height: 18px;
   position: relative;
-  width: fit-content;
+  max-width: 100%;
 }
 
 .frame .frame-wrapper-2 {
@@ -388,5 +389,5 @@
   letter-spacing: 0;
   line-height: 18px;
   position: relative;
-  width: fit-content;
+  max-width: 100%;
 }

@@ -1,7 +1,7 @@
 .group {
-  height: 699px;
+  height: auto;
   position: relative;
-  width: 440px;
+  width: 100%;
 }
 
 .group .frame-2 {
@@ -10,7 +10,7 @@
   flex-direction: column;
   gap: 30px;
   position: relative;
-  width: 440px;
+  width: 100%;
 }
 
 .group .frame-3 {
@@ -21,6 +21,7 @@
   justify-content: space-between;
   position: relative;
   width: 100%;
+  gap: 12px;
 }
 
 .group .frame-4 {
@@ -30,13 +31,18 @@
   flex-direction: column;
   gap: 16px;
   position: relative;
+  width: calc(50% - 6px);
+}
+
+.group .frame-7 {
+  width: calc(50% - 6px);
 }
 
 .group .kakaotalk {
   aspect-ratio: 0.75;
-  height: 279px;
+  height: auto;
   position: relative;
-  width: 209px;
+  width: 100%;
 }
 
 .group .frame-5 {
@@ -45,6 +51,7 @@
   flex: 0 0 auto;
   flex-direction: column;
   gap: 4px;
+  max-width: 100%;
   position: relative;
 }
 
@@ -61,8 +68,8 @@
   margin-top: -1px;
   position: relative;
   text-align: center;
-  white-space: nowrap;
-  width: fit-content;
+  white-space: normal;
+  width: 100%;
 }
 
 .group .frame-6 {
@@ -117,14 +124,15 @@
 
 .group .element {
   aspect-ratio: 0.75;
-  height: 279px;
+  height: auto;
   position: relative;
-  width: 208.5px;
+  width: 100%;
 }
 
 .group .img {
   align-self: stretch;
   flex: 0 0 auto;
+  height: auto;
   position: relative;
   width: 100%;
 }

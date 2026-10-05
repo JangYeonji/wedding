@@ -26,7 +26,7 @@
   line-height: 32px;
   position: relative;
   text-align: center;
-  width: fit-content;
+  width: 100%;
 }
 
 .div .frame-14 {
@@ -36,7 +36,8 @@
   flex-direction: column;
   gap: 20px;
   position: relative;
-  width: 320px;
+  max-width: 320px;
+  width: 100%;
 }
 
 .div .frame-15 {
@@ -48,8 +49,9 @@
   border-radius: 25px;
   display: flex;
   height: 48px;
-  justify-content: space-between;
-  padding: 0px 52px;
+  gap: 12px;
+  justify-content: center;
+  padding: 0px 12px;
   position: relative;
   width: 100%;
 }
@@ -93,8 +95,9 @@
   border-radius: 25px;
   display: flex;
   height: 48px;
-  justify-content: space-between;
-  padding: 0px 74px;
+  gap: 12px;
+  justify-content: center;
+  padding: 0px 12px;
   position: relative;
   width: 100%;
 }
