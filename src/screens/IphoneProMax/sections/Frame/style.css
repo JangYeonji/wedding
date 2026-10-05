@@ -28,6 +28,8 @@
 
 .frame .naver-map {
   align-self: stretch;
+  border: 0;
+  display: block;
   height: 300px;
   position: relative;
   width: 100%;
@@ -128,6 +130,13 @@
   height: 36px;
   justify-content: center;
   position: relative;
+  color: inherit;
+  cursor: pointer;
+}
+
+.frame .div-5:focus-visible {
+  outline: 2px solid #d71979;
+  outline-offset: 3px;
 }
 
 .frame .text-wrapper-8 {

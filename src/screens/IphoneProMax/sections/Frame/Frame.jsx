@@ -1,11 +1,42 @@
 import { ButtonLiquidGlass } from "../../../../components/ButtonLiquidGlass";
 import "./style.css";
 
+const venueName = "오드힐하우스";
+const naverMapUrl = `https://map.naver.com/p/search/${encodeURIComponent(venueName)}`;
+
+const openMapApp = (event, appUrl) => {
+  event.preventDefault();
+  const fallbackUrl = event.currentTarget.href;
+  let appWasOpened = false;
+  const handleVisibilityChange = () => {
+    if (document.visibilityState === "hidden") {
+      appWasOpened = true;
+    }
+  };
+
+  document.addEventListener("visibilitychange", handleVisibilityChange);
+  window.location.href = appUrl;
+  window.setTimeout(() => {
+    document.removeEventListener("visibilitychange", handleVisibilityChange);
+    if (!appWasOpened) {
+      window.location.href = fallbackUrl;
+    }
+  }, 1200);
+};
+
 export const Frame = () => {
+  const appName = window.location.hostname || "wedding-invitation";
+
   return (
     <div className="frame">
       <div className="text-wrapper-5">오시는 길</div>
-      <img className="naver-map" alt="Naver map" src="/img/naver-map-1.png" />
+      <iframe
+        className="naver-map"
+        title={`${venueName} 네이버 지도`}
+        src={naverMapUrl}
+        allowFullScreen
+        loading="lazy"
+      />
       <div className="div-2">
         <div className="div-3">
           <div className="text-wrapper-6">오드힐하우스</div>
@@ -20,7 +51,17 @@ export const Frame = () => {
         />
       </div>
       <div className="div-4">
-        <div className="div-5">
+        <a
+          className="div-5"
+          href="https://www.tmap.co.kr/"
+          onClick={(event) =>
+            openMapApp(
+              event,
+              `tmap://search?name=${encodeURIComponent(venueName)}`,
+            )
+          }
+          aria-label="T map 앱에서 오드힐하우스 찾기"
+        >
           <div className="text-wrapper-8">T MAP</div>
           <div className="clip-path-group">
             <div className="group-wrapper">
@@ -34,23 +75,43 @@ export const Frame = () => {
               </div>
             </div>
           </div>
-        </div>
-        <div className="div-5">
+        </a>
+        <a
+          className="div-5"
+          href={`https://map.kakao.com/link/search/${encodeURIComponent(venueName)}`}
+          onClick={(event) =>
+            openMapApp(
+              event,
+              `kakaomap://search?q=${encodeURIComponent(venueName)}`,
+            )
+          }
+          aria-label="카카오맵 앱에서 오드힐하우스 찾기"
+        >
           <div className="text-wrapper-8">카카오맵</div>
           <div className="element-wrapper">
             <div className="vector-wrapper">
               <img className="vector-3" alt="Vector" src="/img/vector-4.svg" />
             </div>
           </div>
-        </div>
-        <div className="div-5">
+        </a>
+        <a
+          className="div-5"
+          href={naverMapUrl}
+          onClick={(event) =>
+            openMapApp(
+              event,
+              `nmap://search?query=${encodeURIComponent(venueName)}&appname=${encodeURIComponent(appName)}`,
+            )
+          }
+          aria-label="네이버 지도 앱에서 오드힐하우스 찾기"
+        >
           <div className="text-wrapper-8">네이버지도</div>
           <img
             className="service-icon"
             alt="Service icon"
             src="/img/service-icon-1.png"
           />
-        </div>
+        </a>
       </div>
       <div className="div-6">
         <div className="div-7">
