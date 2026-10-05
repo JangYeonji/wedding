@@ -91,7 +91,7 @@ export const Div = () => {
         content: {
           title: "오드힐하우스 결혼식에 초대합니다",
           description: "소중한 분들을 오드힐하우스 결혼식에 초대합니다.",
-          imageUrl: `${invitationUrl}img/l1150368-1.png`,
+          imageUrl: `${invitationUrl}img/1.png`,
           link: {
             mobileWebUrl: invitationUrl,
             webUrl: invitationUrl,

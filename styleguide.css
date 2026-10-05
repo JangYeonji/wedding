@@ -1,27 +1,27 @@
 @font-face {
   font-family: "Gmarket Sans TTF-Medium";
-  src: url("./static/gmarketsansttfmedium.ttf") format("truetype");
+  src: url("https://anima-uploads.s3.amazonaws.com/projects/65b0be41c83abf8b915a6ad0/fonts/gmarketsansttfmedium.ttf") format("truetype");
   font-weight: 400;
   font-style: normal;
 }
 
 @font-face {
   font-family: "Gmarket Sans TTF-Light";
-  src: url("./static/gmarketsansttflight.ttf") format("truetype");
+  src: url("https://anima-uploads.s3.amazonaws.com/projects/65b0be41c83abf8b915a6ad0/fonts/gmarketsansttflight.ttf") format("truetype");
   font-weight: 300;
   font-style: normal;
 }
 
 @font-face {
   font-family: "Gmarket Sans TTF-Bold";
-  src: url("./static/gmarketsansttfbold.ttf") format("truetype");
+  src: url("https://anima-uploads.s3.amazonaws.com/projects/6421572567398b1aca927889/fonts/gmarketsansttfbold.ttf") format("truetype");
   font-weight: 700;
   font-style: normal;
 }
 
 @font-face {
   font-family: "SF Pro-Medium";
-  src: url("./static/SF-Pro.ttf") format("truetype");
+  src: url("https://anima-uploads.s3.amazonaws.com/5f0f0fe71911555ed50ab8f4/SF-Pro.ttf") format("truetype");
   font-weight: 500;
   font-style: normal;
 }
