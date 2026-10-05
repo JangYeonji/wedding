@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { ButtonLiquidGlass } from "../../../../components/ButtonLiquidGlass";
 import "./style.css";
 
@@ -6,6 +6,15 @@ export const FrameWrapper = () => {
   const [copyStatus, setCopyStatus] = useState(null);
   const [groomSideExpanded, setGroomSideExpanded] = useState(true);
   const [brideSideExpanded, setBrideSideExpanded] = useState(true);
+
+  useEffect(() => {
+    if (!copyStatus) {
+      return;
+    }
+
+    const timeoutId = window.setTimeout(() => setCopyStatus(null), 2000);
+    return () => window.clearTimeout(timeoutId);
+  }, [copyStatus]);
 
   const copyAccount = async (accountIndex, accountDetails) => {
     try {

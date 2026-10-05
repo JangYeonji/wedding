@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { ButtonLiquidGlass } from "../../../../components/ButtonLiquidGlass";
 import "./style.css";
 
@@ -29,6 +29,15 @@ const openMapApp = (event, appUrl) => {
 export const Frame = () => {
   const [copyStatus, setCopyStatus] = useState("");
   const appName = window.location.hostname || "wedding-invitation";
+
+  useEffect(() => {
+    if (!copyStatus) {
+      return;
+    }
+
+    const timeoutId = window.setTimeout(() => setCopyStatus(""), 2000);
+    return () => window.clearTimeout(timeoutId);
+  }, [copyStatus]);
 
   const copyVenueAddress = async () => {
     try {

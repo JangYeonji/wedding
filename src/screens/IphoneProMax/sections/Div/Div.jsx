@@ -1,8 +1,17 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./style.css";
 
 export const Div = () => {
   const [copyStatus, setCopyStatus] = useState("");
+
+  useEffect(() => {
+    if (!copyStatus) {
+      return;
+    }
+
+    const timeoutId = window.setTimeout(() => setCopyStatus(""), 2000);
+    return () => window.clearTimeout(timeoutId);
+  }, [copyStatus]);
 
   const copyInvitationUrl = async () => {
     try {
