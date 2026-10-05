@@ -8,16 +8,45 @@ import { Group } from "./sections/Group";
 import "./style.css";
 
 const galleryImages = [
-  { src: "/img/l1140617-1.png", alt: "웨딩 갤러리 사진 1" },
-  { src: "/img/l1150193-1.png", alt: "웨딩 갤러리 사진 2" },
-  { src: "/img/l1140544-1.png", alt: "웨딩 갤러리 사진 3" },
-  { src: "/img/l1140577-2-1.png", alt: "웨딩 갤러리 사진 4" },
-  { src: "/img/l1140703-2-1.png", alt: "웨딩 갤러리 사진 5" },
-  { src: "/img/l1140700-1.png", alt: "웨딩 갤러리 사진 6" },
+  { src: "/static/img/Gallery1-1.jpg", alt: "웨딩 갤러리 사진 1" },
+  { src: "/static/img/Gallery1-2.jpg", alt: "웨딩 갤러리 사진 2" },
+  { src: "/static/img/Gallery1-3.jpg", alt: "웨딩 갤러리 사진 3" },
+  { src: "/static/img/Gallery1-4.jpg", alt: "웨딩 갤러리 사진 4" },
+  { src: "/static/img/Gallery1-5.jpg", alt: "웨딩 갤러리 사진 5" },
+  { src: "/static/img/Gallery1-6.jpg", alt: "웨딩 갤러리 사진 6" },
+  { src: "/static/img/Gallery2-1.jpg", alt: "웨딩 갤러리 사진 7" },
+  { src: "/static/img/Gallery2-2.jpg", alt: "웨딩 갤러리 사진 8" },
+  { src: "/static/img/Gallery2-3.jpg", alt: "웨딩 갤러리 사진 9" },
+  { src: "/static/img/Gallery2-4.jpg", alt: "웨딩 갤러리 사진 10" },
+  { src: "/static/img/Gallery2-5.jpg", alt: "웨딩 갤러리 사진 11" },
+  { src: "/static/img/Gallery2-6.jpg", alt: "웨딩 갤러리 사진 12" },
+  { src: "/static/img/Gallery2-7.jpg", alt: "웨딩 갤러리 사진 13" },
+  { src: "/static/img/Gallery2-8.jpg", alt: "웨딩 갤러리 사진 14" },
+  { src: "/static/img/Gallery3-1.jpg", alt: "웨딩 갤러리 사진 15" },
+  { src: "/static/img/Gallery3-2.jpg", alt: "웨딩 갤러리 사진 16" },
+  { src: "/static/img/Gallery3-3.jpg", alt: "웨딩 갤러리 사진 17" },
+  { src: "/static/img/Gallery3-4.jpg", alt: "웨딩 갤러리 사진 18" },
+  { src: "/static/img/Gallery3-5.jpg", alt: "웨딩 갤러리 사진 19" },
+  { src: "/static/img/Gallery3-6.jpg", alt: "웨딩 갤러리 사진 20" },
+  { src: "/static/img/Gallery3-7(Extra).jpg", alt: "웨딩 갤러리 사진 21" },
+  { src: "/static/img/Gallery4-1.jpg", alt: "웨딩 갤러리 사진 22" },
+  { src: "/static/img/Gallery4-2.jpg", alt: "웨딩 갤러리 사진 23" },
+  { src: "/static/img/Gallery4-3.jpg", alt: "웨딩 갤러리 사진 24" },
+  { src: "/static/img/Gallery4-4.jpg", alt: "웨딩 갤러리 사진 25" },
+  { src: "/static/img/Gallery4-5.jpg", alt: "웨딩 갤러리 사진 26" },
+  { src: "/static/img/Gallery4-6.jpg", alt: "웨딩 갤러리 사진 27" },
+  { src: "/static/img/Gallery5-1.jpg", alt: "웨딩 갤러리 사진 28" },
+  { src: "/static/img/Gallery5-2.jpg", alt: "웨딩 갤러리 사진 29" },
+  { src: "/static/img/Gallery5-3.jpg", alt: "웨딩 갤러리 사진 30" },
+  { src: "/static/img/Gallery5-4.jpg", alt: "웨딩 갤러리 사진 31" },
+  { src: "/static/img/Gallery5-5.jpg", alt: "웨딩 갤러리 사진 32" },
+  { src: "/static/img/Gallery5-6.jpg", alt: "웨딩 갤러리 사진 33" },
+  { src: "/static/img/Gallery5-7(Extra).jpg", alt: "웨딩 갤러리 사진 34" },
 ];
 
 export const IphoneProMax = () => {
   const [selectedImageIndex, setSelectedImageIndex] = useState(null);
+  const [galleryPage, setGalleryPage] = useState(0);
   const closeButtonRef = useRef(null);
   const touchStartXRef = useRef(null);
   const isLightboxOpen = selectedImageIndex !== null;
@@ -96,66 +125,119 @@ export const IphoneProMax = () => {
         <img className="group-4" alt="Group" src="/img/group-166-2.png" />
         <div className="group-5">
           <div className="text-wrapper-21">갤러리</div>
-          <div className="group-6">
+          <div className={`group-6${galleryPage > 0 ? " gallery-grid-layout" : ""}${galleryPage === 2 ? " gallery-third-layout" : ""}`}>
+            {galleryPage === 1 ? (
+              galleryImages.slice(6, 14).map((image, index) => {
+                const imageIndex = index + 6;
+
+                return (
+                  <img
+                    key={image.src}
+                    className={`gallery-grid-image gallery-grid-image-${index + 1} gallery-thumbnail`}
+                    {...image}
+                    role="button"
+                    tabIndex={0}
+                    aria-haspopup="dialog"
+                    onClick={() => setSelectedImageIndex(imageIndex)}
+                    onKeyDown={(event) => handleImageKeyDown(event, imageIndex)}
+                  />
+                );
+              })
+            ) : galleryPage === 2 ? (
+              galleryImages.slice(14, 20).map((image, index) => {
+                const imageIndex = index + 14;
+
+                return (
+                  <img
+                    key={image.src}
+                    className={`gallery-third-image gallery-third-image-${index + 1} gallery-thumbnail`}
+                    {...image}
+                    role="button"
+                    tabIndex={0}
+                    aria-haspopup="dialog"
+                    onClick={() => setSelectedImageIndex(imageIndex)}
+                    onKeyDown={(event) => handleImageKeyDown(event, imageIndex)}
+                  />
+                );
+              })
+            ) : (
+              <>
             <img
-              className="l-2 gallery-thumbnail"
-              {...galleryImages[0]}
-              role="button"
-              tabIndex={0}
-              aria-haspopup="dialog"
-              onClick={() => setSelectedImageIndex(0)}
-              onKeyDown={(event) => handleImageKeyDown(event, 0)}
-            />
-            <img
-              className="l-3 gallery-thumbnail"
-              {...galleryImages[1]}
-              role="button"
-              tabIndex={0}
-              aria-haspopup="dialog"
-              onClick={() => setSelectedImageIndex(1)}
-              onKeyDown={(event) => handleImageKeyDown(event, 1)}
-            />
-            <div className="frame-18">
-              <img
-                className="l-4 gallery-thumbnail"
-                {...galleryImages[2]}
+                className="l-2 gallery-thumbnail"
+                {...galleryImages[0]}
                 role="button"
                 tabIndex={0}
                 aria-haspopup="dialog"
-                onClick={() => setSelectedImageIndex(2)}
-                onKeyDown={(event) => handleImageKeyDown(event, 2)}
+                onClick={() => setSelectedImageIndex(0)}
+                onKeyDown={(event) => handleImageKeyDown(event, 0)}
               />
               <img
-                className="l-4 gallery-thumbnail"
-                {...galleryImages[3]}
+                className="l-3 gallery-thumbnail"
+                {...galleryImages[1]}
                 role="button"
                 tabIndex={0}
                 aria-haspopup="dialog"
-                onClick={() => setSelectedImageIndex(3)}
-                onKeyDown={(event) => handleImageKeyDown(event, 3)}
+                onClick={() => setSelectedImageIndex(1)}
+                onKeyDown={(event) => handleImageKeyDown(event, 1)}
               />
+              <div className="frame-18">
+                <img
+                  className="l-4 gallery-thumbnail"
+                  {...galleryImages[2]}
+                  role="button"
+                  tabIndex={0}
+                  aria-haspopup="dialog"
+                  onClick={() => setSelectedImageIndex(2)}
+                  onKeyDown={(event) => handleImageKeyDown(event, 2)}
+                />
+                <img
+                  className="l-4 gallery-thumbnail"
+                  {...galleryImages[3]}
+                  role="button"
+                  tabIndex={0}
+                  aria-haspopup="dialog"
+                  onClick={() => setSelectedImageIndex(3)}
+                  onKeyDown={(event) => handleImageKeyDown(event, 3)}
+                />
+                <img
+                  className="l-5 gallery-thumbnail"
+                  {...galleryImages[4]}
+                  role="button"
+                  tabIndex={0}
+                  aria-haspopup="dialog"
+                  onClick={() => setSelectedImageIndex(4)}
+                  onKeyDown={(event) => handleImageKeyDown(event, 4)}
+                />
+              </div>
               <img
-                className="l-5 gallery-thumbnail"
-                {...galleryImages[4]}
+                className="l-6 gallery-thumbnail"
+                {...galleryImages[5]}
                 role="button"
                 tabIndex={0}
                 aria-haspopup="dialog"
-                onClick={() => setSelectedImageIndex(4)}
-                onKeyDown={(event) => handleImageKeyDown(event, 4)}
+                onClick={() => setSelectedImageIndex(5)}
+                onKeyDown={(event) => handleImageKeyDown(event, 5)}
               />
-            </div>
-            <img
-              className="l-6 gallery-thumbnail"
-              {...galleryImages[5]}
-              role="button"
-              tabIndex={0}
-              aria-haspopup="dialog"
-              onClick={() => setSelectedImageIndex(5)}
-              onKeyDown={(event) => handleImageKeyDown(event, 5)}
-            />
-            <div className="img-wrapper">
-              <img className="vector-15" alt="Vector" src="/img/vector.svg" />
-            </div>
+              </>
+            )}
+            <button
+              className="img-wrapper gallery-layout-previous"
+              type="button"
+              aria-label="이전 갤러리 보기"
+              disabled={galleryPage === 0}
+              onClick={() => setGalleryPage((page) => Math.max(0, page - 1))}
+            >
+              <img className="vector-15" alt="" src="/img/vector.svg" />
+            </button>
+            <button
+              className="img-wrapper gallery-layout-next"
+              type="button"
+              aria-label="다음 갤러리 보기"
+              disabled={galleryPage === 2}
+              onClick={() => setGalleryPage((page) => Math.min(2, page + 1))}
+            >
+              <img className="vector-15" alt="" src="/img/vector.svg" />
+            </button>
           </div>
         </div>
         <Frame />

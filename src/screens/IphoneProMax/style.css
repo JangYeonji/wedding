@@ -139,6 +139,92 @@
   width: 66.67%;
 }
 
+.iphone-pro-max .gallery-grid-image {
+  height: 33.33%;
+  object-fit: cover;
+  position: absolute;
+  width: 33.33%;
+}
+
+.iphone-pro-max .gallery-grid-image-1 {
+  left: 0;
+  top: 0;
+}
+
+.iphone-pro-max .gallery-grid-image-2 {
+  left: 0;
+  top: 33.33%;
+}
+
+.iphone-pro-max .gallery-grid-image-3 {
+  left: 33.33%;
+  top: 33.33%;
+}
+
+.iphone-pro-max .gallery-grid-image-4 {
+  left: 33.33%;
+  top: 0;
+}
+
+.iphone-pro-max .gallery-grid-image-5 {
+  left: 66.67%;
+  top: 0;
+}
+
+.iphone-pro-max .gallery-grid-image-6 {
+  height: 33.33%;
+  left: 33.33%;
+  top: 66.67%;
+  width: 66.67%;
+}
+
+.iphone-pro-max .gallery-grid-image-7 {
+  left: 66.67%;
+  top: 33.33%;
+}
+
+.iphone-pro-max .gallery-grid-image-8 {
+  left: 0;
+  top: 66.67%;
+}
+
+.iphone-pro-max .gallery-third-image {
+  height: 50%;
+  object-fit: cover;
+  position: absolute;
+  width: 33.33%;
+}
+
+.iphone-pro-max .gallery-third-image-1 {
+  left: 0;
+  top: 0;
+}
+
+.iphone-pro-max .gallery-third-image-2 {
+  left: 33.33%;
+  top: 0;
+}
+
+.iphone-pro-max .gallery-third-image-3 {
+  left: 66.67%;
+  top: 0;
+}
+
+.iphone-pro-max .gallery-third-image-4 {
+  left: 0;
+  top: 50%;
+}
+
+.iphone-pro-max .gallery-third-image-5 {
+  left: 33.33%;
+  top: 50%;
+}
+
+.iphone-pro-max .gallery-third-image-6 {
+  left: 66.67%;
+  top: 50%;
+}
+
 .iphone-pro-max .gallery-thumbnail {
   cursor: zoom-in;
 }
@@ -232,8 +318,8 @@
 }
 
 .iphone-pro-max .img-wrapper {
-  align-items: center;
   aspect-ratio: 1;
+  align-items: center;
   background-color: #0e0007;
   border: 0.5px solid;
   border-color: #ff4ba6;
@@ -242,10 +328,31 @@
   gap: 10px;
   height: auto;
   justify-content: center;
-  left: 93.2%;
   position: absolute;
   top: 48.5%;
   width: 5.45%;
+}
+
+.iphone-pro-max .img-wrapper {
+  cursor: pointer;
+  padding: 0;
+}
+
+.iphone-pro-max .gallery-layout-previous {
+  left: 1.35%;
+}
+
+.iphone-pro-max .gallery-layout-previous .vector-15 {
+  transform: rotate(180deg);
+}
+
+.iphone-pro-max .gallery-layout-next {
+  left: 93.2%;
+}
+
+.iphone-pro-max .img-wrapper:disabled {
+  cursor: default;
+  opacity: 0.4;
 }
 
 .iphone-pro-max .vector-15 {
