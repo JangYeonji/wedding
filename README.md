@@ -30,12 +30,28 @@ If you are satisfied with the result, you can finally build the project for rele
 npm run build
 ```
 
-## Kakao Maps
+## Kakao Maps and KakaoTalk sharing
 
-The directions section uses the Kakao Maps JavaScript API. Set `VITE_KAKAO_JS_KEY`
-to a Kakao Developers JavaScript key with the Maps API enabled, and register the
-site's domain (including the local development domain) in the app's platform
-settings. This key is also used by the Kakao sharing feature.
+Both features use the Kakao Developers JavaScript key configured as
+`VITE_KAKAO_JS_KEY`. Configure that key in the local environment and in the
+deployment environment (for example, Vercel), then rebuild/redeploy after
+changing it.
+
+- **Map:** Enable the Kakao Maps API for the app and register each site origin
+  (local development and deployed domains) under the app's Web platform.
+- **KakaoTalk sharing:** Enable KakaoTalk sharing for the app and register the
+  exact deployed site domain (for example, `https://wedding-xi-silk.vercel.app`)
+  under **Platform > Web > Site domain**. Both the share card and its
+  "청첩장 보기" button link to the invitation URL in `Div.jsx`. The card uses the public
+  `https://wedding-xi-silk.vercel.app/img/kakao-preview.jpg` image and links to
+  the invitation, so the image URL must remain publicly accessible.
+- The `wedding app` label at the bottom of a KakaoTalk share is Kakao's app
+  attribution, not text rendered by this site. It cannot be removed from the
+  feed template in `Div.jsx`; change the app name in Kakao Developers if you
+  want a different label.
+
+The map is rendered directly on the directions section; the separate
+KakaoTalk button sends a reusable feed card with the invitation image and link.
 
 ## Storybook
 

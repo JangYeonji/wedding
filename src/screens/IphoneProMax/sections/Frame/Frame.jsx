@@ -67,7 +67,7 @@ export const Frame = () => {
 
     if (!kakaoJavaScriptKey) {
       console.error("VITE_KAKAO_JS_KEY 환경 변수가 설정되지 않았습니다.");
-      setMapError("카카오 지도를 표시하려면 지도 API 키 설정이 필요합니다.");
+      setMapError("카카오 지도 키가 없습니다. 배포 환경의 VITE_KAKAO_JS_KEY 설정을 확인해 주세요.");
       return () => {
         isMounted = false;
       };
@@ -104,7 +104,9 @@ export const Frame = () => {
       .catch((error) => {
         console.error("카카오 지도를 불러오지 못했습니다.", error);
         if (isMounted) {
-          setMapError("카카오 지도를 불러오지 못했습니다. 카카오맵에서 확인해 주세요.");
+          setMapError(
+            "지도를 불러오지 못했습니다. 카카오 JavaScript 키와 허용 도메인 설정을 확인해 주세요.",
+          );
         }
       });
 
