@@ -48,6 +48,7 @@
   border: 1px solid;
   border-color: #000000;
   border-radius: 25px;
+  cursor: pointer;
   display: flex;
   height: 48px;
   gap: 12px;
@@ -55,6 +56,11 @@
   padding: 0px 12px;
   position: relative;
   width: 100%;
+}
+
+.div .frame-15:focus-visible {
+  outline: 2px solid #ff4ba6;
+  outline-offset: 3px;
 }
 
 .div .text-wrapper-19 {
