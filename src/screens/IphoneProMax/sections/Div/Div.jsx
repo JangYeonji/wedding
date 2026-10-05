@@ -89,7 +89,7 @@ export const Div = () => {
       window.Kakao.Share.sendDefault({
         objectType: "feed",
         content: {
-          title: "문석 ❤️ 연지 결혼합니다. 💍",
+          title: "문석 ❤️ 연지 결혼합니다💍",
           description: "11월 08일 13시 오드힐하우스",
           imageUrl: `${invitationUrl}img/kakao-preview.jpg`,
           link: {
@@ -112,7 +112,7 @@ export const Div = () => {
       if (navigator.share) {
         try {
           await navigator.share({
-            title: "문석 ❤️ 연지 결혼합니다. 💍",
+            title: "문석 ❤️ 연지 결혼합니다💍",
             text: "11월 08일 13시 오드힐하우스",
             url: invitationUrl,
           });
