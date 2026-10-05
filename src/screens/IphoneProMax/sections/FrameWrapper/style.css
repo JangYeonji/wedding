@@ -6,7 +6,7 @@
   gap: 28px;
   position: relative;
   max-width: 410px;
-  width: 100%;
+  width: calc(100% - 30px);
 }
 
 .frame-wrapper .text-wrapper-12 {

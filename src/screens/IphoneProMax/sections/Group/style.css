@@ -8,7 +8,7 @@
   align-items: flex-end;
   display: flex;
   flex-direction: column;
-  gap: 30px;
+  gap: clamp(24px, 6.8vw, 30px);
   position: relative;
   width: 100%;
 }

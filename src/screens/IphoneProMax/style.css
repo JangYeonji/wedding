@@ -12,7 +12,7 @@
   align-items: center;
   display: flex;
   flex-direction: column;
-  gap: 200px;
+  gap: clamp(150px, 45.35vw, 200px);
   margin: 0 auto;
   max-width: 441px;
   position: relative;
@@ -61,7 +61,7 @@
   color: #d71979;
   display: flex;
   font-family: "Gmarket Sans TTF-Medium", Helvetica;
-  font-size: 24px;
+  font-size: clamp(20px, 5.45vw, 24px);
   font-weight: 500;
   height: 28px;
   justify-content: center;
@@ -161,14 +161,4 @@
   height: 42%;
   position: relative;
   width: 21%;
-}
-
-@media (max-width: 360px) {
-  .iphone-pro-max .frame-17 {
-    gap: 150px;
-  }
-
-  .iphone-pro-max .text-wrapper-21 {
-    font-size: 20px;
-  }
 }

@@ -4,7 +4,7 @@
   display: flex;
   flex: 0 0 auto;
   flex-direction: column;
-  gap: 28px;
+  gap: clamp(22px, 6.35vw, 28px);
   position: relative;
   width: 100%;
 }
@@ -30,7 +30,7 @@
   align-self: stretch;
   border-radius: 12px;
   display: block;
-  height: 300px;
+  height: clamp(220px, 68vw, 300px);
   overflow: hidden;
   position: relative;
   width: 100%;
@@ -145,7 +145,7 @@
   align-items: center;
   display: flex;
   flex: 0 0 auto;
-  gap: 16px;
+  gap: clamp(10px, 3.63vw, 16px);
   justify-content: center;
   max-width: 400px;
   position: relative;
@@ -265,7 +265,7 @@
   max-width: 410px;
   padding: 20px 15px;
   position: relative;
-  width: 100%;
+  width: calc(100% - 30px);
 }
 
 .frame .div-7 {
@@ -326,8 +326,8 @@
 
 .frame .div-9 {
   align-items: flex-start;
-  display: inline-flex;
-  flex: 0 0 auto;
+  display: flex;
+  flex: 1 1 0;
   flex-direction: column;
   gap: 4px;
   min-width: 0;
@@ -355,8 +355,11 @@
   font-weight: 400;
   letter-spacing: 0;
   line-height: normal;
+  min-width: 0;
+  overflow-wrap: anywhere;
   position: relative;
   max-width: 100%;
+  width: 100%;
 }
 
 .frame .text-wrapper-10 {
@@ -372,7 +375,7 @@
 
 .frame .div-10 {
   align-items: flex-start;
-  display: inline-flex;
+  display: flex;
   flex: 0 0 auto;
   gap: 14px;
   position: relative;
@@ -386,17 +389,22 @@
   font-weight: 300;
   letter-spacing: 0;
   line-height: 18px;
+  min-width: 0;
+  overflow-wrap: anywhere;
   position: relative;
   max-width: 100%;
+  width: 100%;
 }
 
 .frame .frame-wrapper-2 {
   align-items: flex-start;
-  display: inline-flex;
+  align-self: stretch;
+  display: flex;
   flex: 0 0 auto;
   flex-direction: column;
   gap: 14px;
   position: relative;
+  width: 100%;
 }
 
 
@@ -416,6 +424,9 @@
   font-weight: 400;
   letter-spacing: 0;
   line-height: 18px;
+  min-width: 0;
+  overflow-wrap: anywhere;
   position: relative;
   max-width: 100%;
+  width: 100%;
 }

@@ -1,10 +1,10 @@
 .div-wrapper {
   color: #ffffff;
   font-family: "Gmarket Sans TTF-Medium", Helvetica;
-  font-size: 15px;
+  font-size: clamp(13px, 3.4vw, 15px);
   font-weight: 400;
   letter-spacing: 0;
-  line-height: 36px;
+  line-height: clamp(29px, 8.17vw, 36px);
   position: relative;
   text-align: center;
   max-width: 419px;
@@ -17,6 +17,6 @@
 
 .div-wrapper .span {
   font-family: "Gmarket Sans TTF-Light", Helvetica;
-  font-size: 13px;
+  font-size: clamp(12px, 2.95vw, 13px);
   font-weight: 300;
 }
