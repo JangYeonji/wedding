@@ -72,9 +72,9 @@ export const IphoneProMax = () => {
       if (event.key === "Escape") {
         setSelectedImageIndex(null);
       } else if (event.key === "ArrowLeft") {
-        setSelectedImageIndex((index) => Math.max(0, index - 1));
+        setSelectedImageIndex((index) => (index - 1 + galleryImages.length) % galleryImages.length);
       } else if (event.key === "ArrowRight") {
-        setSelectedImageIndex((index) => Math.min(galleryImages.length - 1, index + 1));
+        setSelectedImageIndex((index) => (index + 1) % galleryImages.length);
       }
     };
 
@@ -87,11 +87,11 @@ export const IphoneProMax = () => {
   }, [isLightboxOpen]);
 
   const showPreviousImage = () => {
-    setSelectedImageIndex((index) => Math.max(0, index - 1));
+    setSelectedImageIndex((index) => (index - 1 + galleryImages.length) % galleryImages.length);
   };
 
   const showNextImage = () => {
-    setSelectedImageIndex((index) => Math.min(galleryImages.length - 1, index + 1));
+    setSelectedImageIndex((index) => (index + 1) % galleryImages.length);
   };
 
   const showPreviousGalleryPage = () => {
@@ -351,7 +351,6 @@ export const IphoneProMax = () => {
               className="gallery-lightbox-nav gallery-lightbox-previous"
               type="button"
               aria-label="이전 사진"
-              disabled={selectedImageIndex === 0}
               onClick={showPreviousImage}
             >
               <svg
@@ -371,7 +370,6 @@ export const IphoneProMax = () => {
               className="gallery-lightbox-nav gallery-lightbox-next"
               type="button"
               aria-label="다음 사진"
-              disabled={selectedImageIndex === galleryImages.length - 1}
               onClick={showNextImage}
             >
               <svg
