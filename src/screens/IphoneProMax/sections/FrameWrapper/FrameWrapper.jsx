@@ -101,9 +101,11 @@ export const FrameWrapper = () => {
             <div className="frame-12">
               <div className="text-wrapper-14">신랑 어머니</div>
               <div className="element-5">
-                홍정주
-                <br />
-                농협중앙회 335-12-232834
+                <span className="text-wrapper-15">
+                  홍정주
+                  <br />
+                </span>
+                <span className="text-wrapper-16">농협중앙회 335-12-232834</span>
               </div>
             </div>
             <ButtonLiquidGlass
@@ -141,9 +143,11 @@ export const FrameWrapper = () => {
             <div className="frame-12">
               <div className="text-wrapper-17">신부</div>
               <div className="element-5">
-                장연지
-                <br />
-                우리은행 1002-954-609671
+                <span className="text-wrapper-15">
+                  장연지
+                  <br />
+                </span>
+                <span className="text-wrapper-16">우리은행 1002-954-609671</span>
               </div>
             </div>
             <ButtonLiquidGlass
@@ -163,9 +167,11 @@ export const FrameWrapper = () => {
             <div className="frame-13">
               <div className="text-wrapper-17">신부 아버지</div>
               <div className="element-6">
-                장영훈
-                <br />
-                카카오뱅크 3333-04-1121431
+                <span className="text-wrapper-15">
+                  장영훈
+                  <br />
+                </span>
+                <span className="text-wrapper-16">카카오뱅크 3333-04-1121431</span>
               </div>
             </div>
             <ButtonLiquidGlass
@@ -185,9 +191,11 @@ export const FrameWrapper = () => {
             <div className="frame-12">
               <div className="text-wrapper-17">신부 어머니</div>
               <div className="element-5">
-                정훤희
-                <br />
-                신한은행 110-139-768862
+                <span className="text-wrapper-15">
+                  정훤희
+                  <br />
+                </span>
+                <span className="text-wrapper-16">신한은행 110-139-768862</span>
               </div>
             </div>
             <ButtonLiquidGlass
