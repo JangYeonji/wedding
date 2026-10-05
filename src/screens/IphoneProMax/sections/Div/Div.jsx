@@ -73,7 +73,7 @@ export const Div = () => {
     }
   };
 
-  const shareInvitation = () => {
+  const shareInvitation = async () => {
     if (!kakaoJavaScriptKey) {
       console.error("VITE_KAKAO_JS_KEY 환경 변수가 설정되지 않았습니다.");
       window.alert("카카오톡 공유 설정이 필요합니다. 관리자에게 문의해 주세요.");
@@ -109,7 +109,25 @@ export const Div = () => {
       });
     } catch (error) {
       console.error("카카오톡 청첩장 공유에 실패했습니다.", error);
-      window.alert("카카오톡 공유에 실패했습니다. 잠시 후 다시 시도해 주세요.");
+      if (navigator.share) {
+        try {
+          await navigator.share({
+            title: "오드힐하우스 결혼식에 초대합니다",
+            text: "소중한 분들을 오드힐하우스 결혼식에 초대합니다.",
+            url: invitationUrl,
+          });
+          return;
+        } catch (shareError) {
+          if (shareError.name === "AbortError") {
+            return;
+          }
+          console.error("시스템 공유 메뉴 열기에 실패했습니다.", shareError);
+        }
+      }
+
+      window.alert(
+        "공유 창을 열지 못했습니다. 팝업 차단을 해제하거나 청첩장 주소 복사하기를 이용해 주세요.",
+      );
     }
   };
 
