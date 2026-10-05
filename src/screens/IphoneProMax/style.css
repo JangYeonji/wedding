@@ -189,7 +189,7 @@
 }
 
 .iphone-pro-max .gallery-third-image {
-  height: 50%;
+  height: 33.33%;
   object-fit: cover;
   position: absolute;
   width: 33.33%;
@@ -212,17 +212,29 @@
 
 .iphone-pro-max .gallery-third-image-4 {
   left: 0;
-  top: 50%;
+  top: 33.33%;
 }
 
 .iphone-pro-max .gallery-third-image-5 {
   left: 33.33%;
-  top: 50%;
+  top: 33.33%;
 }
 
 .iphone-pro-max .gallery-third-image-6 {
   left: 66.67%;
-  top: 50%;
+  top: 33.33%;
+}
+
+.iphone-pro-max .gallery-third-image-7 {
+  height: 33.33%;
+  left: 0;
+  top: 66.67%;
+  width: 66.67%;
+}
+
+.iphone-pro-max .gallery-third-image-8 {
+  left: 66.67%;
+  top: 66.67%;
 }
 
 .iphone-pro-max .gallery-thumbnail {
