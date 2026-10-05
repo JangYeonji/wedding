@@ -191,6 +191,10 @@
   width: 69px !important;
 }
 
+.frame-wrapper .design-component-instance-node .BG {
+  background: #cf1d77;
+}
+
 .frame-wrapper .button-liquid-glass-2 {
   flex: 0 0 auto !important;
   left: unset !important;

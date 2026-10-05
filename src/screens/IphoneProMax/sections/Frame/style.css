@@ -122,6 +122,10 @@
   width: 100px !important;
 }
 
+.frame .button-liquid-glass-text .BG {
+  background: #cf1d77;
+}
+
 .frame .button-liquid-glass-instance {
   flex: 0 0 auto !important;
   left: unset !important;
