@@ -27,12 +27,12 @@
 }
 
 .frame .kakao-map-container {
-  align-self: stretch;
   border-radius: 12px;
   height: clamp(220px, 68vw, 300px);
   overflow: hidden;
   position: relative;
-  width: 100%;
+  width: calc(100% - 24px);
+  max-width: 410px;
 }
 
 .frame .kakao-map {
