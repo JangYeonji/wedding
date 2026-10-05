@@ -35,6 +35,7 @@ const loadKakaoSdk = () => {
 
 export const Div = () => {
   const [copyStatus, setCopyStatus] = useState("");
+  const [kakaoReady, setKakaoReady] = useState(false);
 
   useEffect(() => {
     if (!copyStatus) {
@@ -44,6 +45,23 @@ export const Div = () => {
     const timeoutId = window.setTimeout(() => setCopyStatus(""), 2000);
     return () => window.clearTimeout(timeoutId);
   }, [copyStatus]);
+
+  useEffect(() => {
+    if (!kakaoJavaScriptKey) {
+      return;
+    }
+
+    loadKakaoSdk()
+      .then((Kakao) => {
+        if (!Kakao.isInitialized()) {
+          Kakao.init(kakaoJavaScriptKey);
+        }
+        setKakaoReady(true);
+      })
+      .catch((error) => {
+        console.error("카카오톡 공유 SDK 초기화에 실패했습니다.", error);
+      });
+  }, []);
 
   const copyInvitationUrl = async () => {
     try {
@@ -55,20 +73,20 @@ export const Div = () => {
     }
   };
 
-  const shareInvitation = async () => {
+  const shareInvitation = () => {
     if (!kakaoJavaScriptKey) {
       console.error("VITE_KAKAO_JS_KEY 환경 변수가 설정되지 않았습니다.");
       window.alert("카카오톡 공유 설정이 필요합니다. 관리자에게 문의해 주세요.");
       return;
     }
 
-    try {
-      const Kakao = await loadKakaoSdk();
-      if (!Kakao.isInitialized()) {
-        Kakao.init(kakaoJavaScriptKey);
-      }
+    if (!kakaoReady || !window.Kakao?.isInitialized()) {
+      window.alert("카카오톡 공유 기능을 준비하고 있습니다. 잠시 후 다시 시도해 주세요.");
+      return;
+    }
 
-      Kakao.Share.sendDefault({
+    try {
+      window.Kakao.Share.sendDefault({
         objectType: "feed",
         content: {
           title: "오드힐하우스 결혼식에 초대합니다",
