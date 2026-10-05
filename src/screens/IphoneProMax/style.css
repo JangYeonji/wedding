@@ -1,0 +1,162 @@
+.iphone-pro-max {
+  background-color: #141414;
+  display: flex;
+  justify-content: center;
+  min-height: 8096px;
+  min-width: 440px;
+  overflow: hidden;
+  width: 100%;
+}
+
+.iphone-pro-max .frame-17 {
+  align-items: center;
+  display: inline-flex;
+  flex-direction: column;
+  gap: 200px;
+  height: 7953.69px;
+  margin-left: 1px;
+  position: relative;
+  width: 441px;
+}
+
+.iphone-pro-max .element-7 {
+  align-self: stretch;
+  aspect-ratio: 0.69;
+  position: relative;
+  width: 100%;
+}
+
+.iphone-pro-max .image {
+  aspect-ratio: 0.69;
+  height: 633px;
+  object-fit: cover;
+  position: relative;
+  width: 435px;
+}
+
+.iphone-pro-max .image-2 {
+  aspect-ratio: 0.59;
+  height: 748px;
+  object-fit: cover;
+  position: relative;
+  width: 440px;
+}
+
+.iphone-pro-max .group-4 {
+  aspect-ratio: 0.88;
+  height: 399px;
+  object-fit: cover;
+  position: relative;
+  width: 350px;
+}
+
+.iphone-pro-max .group-5 {
+  height: 712px;
+  margin-right: -2px;
+  position: relative;
+  width: 443px;
+}
+
+.iphone-pro-max .text-wrapper-21 {
+  align-items: center;
+  color: #d71979;
+  display: flex;
+  font-family: "Gmarket Sans TTF-Medium", Helvetica;
+  font-size: 24px;
+  font-weight: 500;
+  height: 28px;
+  justify-content: center;
+  left: calc(50.00% - 36px);
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  text-align: center;
+  top: 0;
+  white-space: nowrap;
+}
+
+.iphone-pro-max .group-6 {
+  height: 660px;
+  left: 0;
+  position: absolute;
+  top: 52px;
+  width: 441px;
+}
+
+.iphone-pro-max .l-2 {
+  aspect-ratio: 0.67;
+  height: 220px;
+  left: 294px;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  width: 146px;
+}
+
+.iphone-pro-max .l-3 {
+  aspect-ratio: 0.67;
+  height: 220px;
+  left: 294px;
+  object-fit: cover;
+  position: absolute;
+  top: 220px;
+  width: 146px;
+}
+
+.iphone-pro-max .frame-18 {
+  align-items: flex-start;
+  display: inline-flex;
+  left: calc(50.00% - 220px);
+  position: absolute;
+  top: 440px;
+}
+
+.iphone-pro-max .l-4 {
+  aspect-ratio: 0.67;
+  height: 220px;
+  object-fit: cover;
+  position: relative;
+  width: 147px;
+}
+
+.iphone-pro-max .l-5 {
+  aspect-ratio: 0.67;
+  height: 220px;
+  object-fit: cover;
+  position: relative;
+  width: 146px;
+}
+
+.iphone-pro-max .l-6 {
+  aspect-ratio: 0.67;
+  height: 440px;
+  left: 0;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  width: 294px;
+}
+
+.iphone-pro-max .img-wrapper {
+  align-items: center;
+  aspect-ratio: 1;
+  background-color: #0e0007;
+  border: 0.5px solid;
+  border-color: #ff4ba6;
+  border-radius: 16px;
+  display: flex;
+  gap: 10px;
+  height: 24px;
+  justify-content: center;
+  left: 412px;
+  position: absolute;
+  top: calc(50.00% - 10px);
+  width: 24px;
+}
+
+.iphone-pro-max .vector-15 {
+  aspect-ratio: 1.75;
+  height: 10px;
+  position: relative;
+  width: 5px;
+}

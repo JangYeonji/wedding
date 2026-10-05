@@ -1,0 +1,122 @@
+import { ButtonLiquidGlass } from "../../../../components/ButtonLiquidGlass";
+import "./style.css";
+
+export const Frame = () => {
+  return (
+    <div className="frame">
+      <div className="text-wrapper-5">오시는 길</div>
+      <img className="naver-map" alt="Naver map" src="/img/naver-map-1.png" />
+      <div className="div-2">
+        <div className="div-3">
+          <div className="text-wrapper-6">오드힐하우스</div>
+          <div className="text-wrapper-7">서울특별시 서초구 방배로 47</div>
+        </div>
+        <ButtonLiquidGlass
+          className="button-liquid-glass-text"
+          labelTextPreferredLabel="주소 복사하기"
+          labelTextPreferredModeLightStateClassName="button-liquid-glass-instance"
+          labelTextPreferredSymbolClassName="button-liquid-glass-text-instance"
+          tinted
+        />
+      </div>
+      <div className="div-4">
+        <div className="div-5">
+          <div className="text-wrapper-8">T MAP</div>
+          <div className="clip-path-group">
+            <div className="group-wrapper">
+              <div className="group-2">
+                <img className="vector" alt="Vector" src="/img/vector-1.svg" />
+                <img
+                  className="vector-2"
+                  alt="Vector"
+                  src="/img/vector-2.svg"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="div-5">
+          <div className="text-wrapper-8">카카오맵</div>
+          <div className="element-wrapper">
+            <div className="vector-wrapper">
+              <img className="vector-3" alt="Vector" src="/img/vector-4.svg" />
+            </div>
+          </div>
+        </div>
+        <div className="div-5">
+          <div className="text-wrapper-8">네이버지도</div>
+          <img
+            className="service-icon"
+            alt="Service icon"
+            src="/img/service-icon-1.png"
+          />
+        </div>
+      </div>
+      <div className="div-6">
+        <div className="div-7">
+          <div className="div-8">
+            <img className="vector-4" alt="Vector" src="/img/vector-5.svg" />
+            <img className="vector-5" alt="Vector" src="/img/vector-7.svg" />
+            <img className="vector-6" alt="Vector" src="/img/vector-7.svg" />
+            <img className="vector-7" alt="Vector" src="/img/vector-8.svg" />
+          </div>
+          <div className="div-9">
+            <div className="text-wrapper-9">지하철 이용시</div>
+            <p className="p">
+              <span className="text-wrapper-10">2호선 방배역</span>
+              <span className="text-wrapper-11"> 2번 출구에서 도보 3분</span>
+            </p>
+          </div>
+        </div>
+        <div className="div-10">
+          <div className="div-8">
+            <img className="vector-8" alt="Vector" src="/img/vector-9.svg" />
+          </div>
+          <div className="div-9">
+            <div className="text-wrapper-9">버스 이용시</div>
+            <p className="element-2">
+              방배역, 방배그랑자이, 방배임광아파트 하차
+              <br />
+              간선버스 142, 350, 406, 461
+              <br />
+              지선버스 5413, 4319
+              <br />
+              광역버스 1500-2
+              <br />
+              마을버스 서초07, 서초13, 서초15, 서초16, 서초17
+            </p>
+          </div>
+        </div>
+        <div className="frame-wrapper-2">
+          <div className="div-10">
+            <div className="div-8">
+              <div className="group-3">
+                <img
+                  className="vector-9"
+                  alt="Vector"
+                  src="/img/vector-10.svg"
+                />
+                <img
+                  className="vector-10"
+                  alt="Vector"
+                  src="/img/vector-11.svg"
+                />
+              </div>
+            </div>
+            <div className="div-9">
+              <div className="text-wrapper-9">주차 안내</div>
+              <p className="element-3">
+                <span className="text-wrapper-10">2시간 무료</span>
+                <span className="text-wrapper-11">
+                  이용
+                  <br />
+                  웨딩홀 1층 주차장 또는 방배동 성당 주차장(도보 5분)
+                </span>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};

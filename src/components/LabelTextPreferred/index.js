@@ -1,0 +1,1 @@
+export { LabelTextPreferred } from "./LabelTextPreferred";

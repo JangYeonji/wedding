@@ -1,0 +1,130 @@
+.group {
+  height: 699px;
+  position: relative;
+  width: 440px;
+}
+
+.group .frame-2 {
+  align-items: flex-end;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  position: relative;
+  width: 440px;
+}
+
+.group .frame-3 {
+  align-items: flex-start;
+  align-self: stretch;
+  display: flex;
+  flex: 0 0 auto;
+  justify-content: space-between;
+  position: relative;
+  width: 100%;
+}
+
+.group .frame-4 {
+  align-items: center;
+  display: inline-flex;
+  flex: 0 0 auto;
+  flex-direction: column;
+  gap: 16px;
+  position: relative;
+}
+
+.group .kakaotalk {
+  aspect-ratio: 0.75;
+  height: 279px;
+  position: relative;
+  width: 209px;
+}
+
+.group .frame-5 {
+  align-items: center;
+  display: inline-flex;
+  flex: 0 0 auto;
+  flex-direction: column;
+  gap: 4px;
+  position: relative;
+}
+
+.group .text-wrapper-2 {
+  align-items: center;
+  color: #ffffff;
+  display: flex;
+  font-family: "Gmarket Sans TTF-Medium", Helvetica;
+  font-size: 16px;
+  font-weight: 500;
+  justify-content: center;
+  letter-spacing: 0;
+  line-height: normal;
+  margin-top: -1px;
+  position: relative;
+  text-align: center;
+  white-space: nowrap;
+  width: fit-content;
+}
+
+.group .frame-6 {
+  align-items: flex-end;
+  display: inline-flex;
+  flex: 0 0 auto;
+  gap: 8px;
+  position: relative;
+}
+
+.group .text-wrapper-3 {
+  align-items: center;
+  color: #ff4ba6;
+  display: flex;
+  font-family: "Gmarket Sans TTF-Bold", Helvetica;
+  font-size: 16px;
+  font-weight: 700;
+  justify-content: center;
+  letter-spacing: 0;
+  line-height: normal;
+  position: relative;
+  text-align: center;
+  white-space: nowrap;
+  width: fit-content;
+}
+
+.group .text-wrapper-4 {
+  align-items: center;
+  color: #ffffff;
+  display: flex;
+  font-family: "Gmarket Sans TTF-Bold", Helvetica;
+  font-size: 20px;
+  font-weight: 700;
+  justify-content: center;
+  letter-spacing: 0;
+  line-height: normal;
+  margin-top: -1px;
+  position: relative;
+  text-align: center;
+  white-space: nowrap;
+  width: fit-content;
+}
+
+.group .frame-7 {
+  align-items: center;
+  display: inline-flex;
+  flex: 0 0 auto;
+  flex-direction: column;
+  gap: 18px;
+  position: relative;
+}
+
+.group .element {
+  aspect-ratio: 0.75;
+  height: 279px;
+  position: relative;
+  width: 208.5px;
+}
+
+.group .img {
+  align-self: stretch;
+  flex: 0 0 auto;
+  position: relative;
+  width: 100%;
+}

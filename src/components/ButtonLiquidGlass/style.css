@@ -1,0 +1,26 @@
+.button-liquid-glass {
+  align-items: center;
+  border-radius: 1000px;
+  display: inline-flex;
+  gap: 4px;
+  justify-content: center;
+  left: 30px;
+  padding: 6px 20px;
+  position: relative;
+  top: 110px;
+}
+
+.button-liquid-glass .BG {
+  display: unset !important;
+  height: 100% !important;
+  left: 0 !important;
+  position: absolute !important;
+  top: 0 !important;
+  width: 100% !important;
+}
+
+.button-liquid-glass .liquid-glass-regular-small {
+  flex: unset !important;
+  height: 100% !important;
+  width: unset !important;
+}

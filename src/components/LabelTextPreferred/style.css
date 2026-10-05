@@ -1,0 +1,26 @@
+.label-text-preferred {
+  align-items: center;
+  border-radius: 100px;
+  display: inline-flex;
+  height: 36px;
+  justify-content: center;
+  left: 20px;
+  position: relative;
+  top: 20px;
+}
+
+.label-text-preferred .symbol {
+  align-items: center;
+  color: #ffffff;
+  display: flex;
+  font-family: "SF Pro-Medium", Helvetica;
+  font-size: 17px;
+  font-weight: 500;
+  justify-content: center;
+  letter-spacing: 0;
+  line-height: normal;
+  position: relative;
+  text-align: center;
+  white-space: nowrap;
+  width: fit-content;
+}

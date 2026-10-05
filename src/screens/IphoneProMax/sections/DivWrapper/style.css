@@ -1,0 +1,21 @@
+.div-wrapper {
+  color: #ffffff;
+  font-family: "Gmarket Sans TTF-Medium", Helvetica;
+  font-size: 15px;
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: 36px;
+  position: relative;
+  text-align: center;
+  width: 419px;
+}
+
+.div-wrapper .text-wrapper {
+  font-weight: 500;
+}
+
+.div-wrapper .span {
+  font-family: "Gmarket Sans TTF-Light", Helvetica;
+  font-size: 13px;
+  font-weight: 300;
+}
