@@ -48,8 +48,8 @@ const galleryImages = [
 ];
 
 const secondGalleryPageImageIndices = [6, 9, 10, 7, 8, 12, 13, 11];
-const fourthGalleryPageImageIndices = [23, 24, 25, 26, 27, 28];
-const fifthGalleryPageImageIndices = [32, 33, 30, 29, 31, 34];
+const fourthGalleryPageImageIndices = [24, 25, 26, 27, 28, 29];
+const fifthGalleryPageImageIndices = [33, 34, 31, 30, 32, 35];
 
 export const IphoneProMax = () => {
   const [selectedImageIndex, setSelectedImageIndex] = useState(null);
@@ -220,10 +220,6 @@ export const IphoneProMax = () => {
               })
             ) : galleryPage === 4 ? (
               fifthGalleryPageImageIndices.map((imageIndex, index) => {
-                if (imageIndex === null) {
-                  return null;
-                }
-
                 const image = galleryImages[imageIndex];
 
                 return (
