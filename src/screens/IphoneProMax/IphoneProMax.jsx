@@ -220,6 +220,10 @@ export const IphoneProMax = () => {
               })
             ) : galleryPage === 4 ? (
               fifthGalleryPageImageIndices.map((imageIndex, index) => {
+                if (imageIndex === null) {
+                  return null;
+                }
+
                 const image = galleryImages[imageIndex];
 
                 return (
